@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>报错页面</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="css/lv.css"/>
+</head>
+<body>
+<header id="header" class="am-header am-header-fixed  am-no-layout" data-am-widget="header">
+    <div class="am-header-left am-header-nav">
+        <a href="javascript:history.go(-1);" shape="rect">
+            <img src="img/icon-back.png" class="lv-img-back"/>
+        </a>
+    </div>
+    <span class="am-margin-left-sm am-text-sm">返回</span>
+</header>
+<div class="lv-margin-top-four gh-center">
+    <img src="img/gh-error.png" style="width:16rem;" class="lv-margin-top-xxl "/>
+    <div class=" am-padding-vertical-lg lv-text-grey am-text-sm">页面出错了，请检查网络</div>
+    <a href="javascript:history.go(-1);location.reload();"
+       class="gh-error-btn lv-text-green gh-border-green am-margin-top-lg">重新加载</a>
+</div>
+</body>
+</html>

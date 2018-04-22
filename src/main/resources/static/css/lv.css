@@ -1,0 +1,464 @@
+html {
+    font-size: 10px
+}
+input {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.lv-login-ipt{
+	
+}
+.am-header-fixed{
+	background:#fff;
+}
+
+/*字体大小*/
+.lv-text-bold{
+    font-weight: bold;
+}
+.lv-icon-user {
+    width: 2.2rem;
+    height: 2.2rem;
+}
+.lv-icon-lg {
+    width: 4rem;
+    height: 4rem;
+}
+.lv-icon-xs {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+.lv-icon-goto {
+    width: .7rem;
+    margin-top: .5rem;
+}
+.lv-icon-going {
+    width: .7rem;
+    margin-top: 1.5rem;
+}
+.lv-text-xl{
+    font-size:2.4rem;
+}
+.lv-text-default{
+	font-size:1.6rem !important;
+}
+.lv-text-lg{
+    font-size:2rem;
+}
+/* border */
+.lv-border-red{
+	border:1px solid red !important;
+	border-top:none !important;
+	border-left:none !important;
+	border-right:none !important;
+}
+.lv-border-grey{
+	border-bottom:1px solid #ccc !important;
+	border-top:none !important;
+	border-left:none !important;
+	border-right:none !important;
+}
+.gh-border-0{
+	border:0 !important;
+}
+.gh-border-radius{
+	border-radius:6px;
+}
+.gh-border-green{
+	border:1px solid #23bd23;
+}
+.gh-bottom-border {
+    border-bottom: 1px solid #f5f5f5;
+}
+/*字体颜色*/
+.gh-text-white{
+	color:#fff !important;
+}
+.lv-text-green{
+    color:#23bd23;
+}
+.lv-text-grey{
+	color:#b3b3b3;
+}
+.lv-text-blue{
+	color:#749fff;
+}
+.lv-text-red{
+	color:#ff6666;
+}
+.gh-text-red{
+	color:#ff5454;
+}
+
+.lv-text-black{
+	color:#000 !important;
+}
+/* 背景 */
+.lv-bg-none{
+	background:none;
+}
+.lv-bg-green{
+	background:#23bd23 !important;
+}
+.gh-bg-top{
+	background:#00ba8b !important;
+}
+.lv-bg-grey{
+	background:#96e596 !important;
+}
+.gh-bg-gray{
+	background:#f4f4f4 !important;
+}
+.lv-bg-gray{
+	background:#999 !important;
+}
+.jm-text-danger {
+    color: #ff5c5c !important;
+}
+/* img */
+.lv-img-back{
+	height:1.2rem !important;
+}
+/* padding */
+
+.lv-padding-vertical-sm{
+	padding-top:0.8rem;
+	padding-bottom:0.8rem;
+}
+.lv-padding-0{
+	padding:0 !important;
+}
+.lv-padding-up{
+	padding:0.5rem 0 0 0 !important;
+}
+.lv-padding-one{
+	padding:1rem 1rem !important;
+}
+/*margin*/
+.lv-margin-left-index{
+	margin-left:2.4rem;
+}
+.lv-icon-top{
+	margin-top:-0.3rem;
+}
+.lv-margin-0 {
+    margin: 0 !important;
+}
+.lv-margin-top-xxs{
+	margin-top:1rem;
+}
+.gh-margin-top-xxs{
+	margin-top:0.5rem;
+}
+.gh-margin-top-md{
+	margin-top:10%;
+	margin-right:8%;
+}
+.lv-margin-top-xxl{
+    margin-top:4.8rem;
+}
+.lv-margin-top-four{
+    margin-top:4rem;
+}
+.lv-margin-left-lg{
+	margin-left:1.6rem;
+}
+.lv-reg-ul{
+    list-style: none;
+    margin:0 auto;
+}
+.lv-reg-ul li{
+	width:43%;
+	margin-right:1%;
+    height:4rem;
+    line-height: 4rem;
+    border:1px solid #23bd23;
+}
+.lv-position-bottom{
+	position:fixed;
+	bottom:2rem;
+	width:100%;
+}
+.reg-img{
+    width:30rem;
+   	float:right;
+}
+.lv-relative{
+	position:relative;
+}
+.lv-eye{
+	position:absolute;
+	top:0.1rem;
+	right:0.5rem;
+}
+.lv-eye-open{
+	width:1.8rem;
+}
+.lv-reg-yzm{
+	width:8rem;
+}
+.lv-error-one{
+	position:absolute;
+	top:0.5rem;
+	left:8rem;
+}
+.lv-error-two{
+	position:absolute;
+	top:0.5rem;
+	left:8rem;
+}
+.lv-error-zero{
+	position:absolute;
+	top:0.5rem;
+	left:6rem;
+}
+.lv-password-error{
+	position:absolute;
+	top:0.5rem;
+	left:4rem;
+}
+.lv-account-error{
+	position:absolute;
+	top:0.2rem;
+	left:4rem;
+}
+.lv-error-four{
+	position:absolute;
+	top:0.2rem;
+	left:6rem;
+}
+.loadingWrap{  
+    position:fixed;  
+    top:0;  
+    left:0;  
+    width:100%;  
+    height:100%;  
+    z-index:300;  
+    background-image:url(loading.gif);  
+    background-repeat:no-repeat;  
+    background-position:center center;  
+    background-color:#000;  
+    background-color:rgba(0,0,0,0.5);  
+    filter:alpha(opacity=50);  
+}
+.gh-header-img{
+	width:4rem;
+	height:4rem;
+}
+.lv-user-out{
+	padding:2rem 2rem;
+}
+.jm-header-cover{
+	position: absolute;
+    left: 3.5rem;
+    bottom: 0.2rem;
+}
+.gh-money-img{
+	width:2.4rem;
+	height:2.4rem
+}
+.gh-block{
+	display:inline-block !important;
+} 
+.gh-error-btn{
+	border-radius:50px;
+	padding:0.5rem 1.5rem;
+} 
+.gh-404-btn{
+	border-radius:50px;
+	padding:0.5rem 3.5rem;
+}
+.gh-center{
+	text-align:center;
+}
+.admin-bg{
+	background-image: url(/img/admin-bg.png);
+	background-size:100% 100%;
+	background-repeat:no-repeat ;
+}
+.gh-bg{
+	background:#fff;
+}
+.lv-shadow{
+	-moz-box-shadow:0px 0px 4px rgba(0,0,0,.1);
+	 -webkit-box-shadow:0px 0px 4px rgba(0,0,0,.1);
+	 box-shadow:0px 0px 4px rgba(0,0,0,.1);
+}
+.lv-shadow-down{
+	-moz-box-shadow:2px 4px 4px rgba(0,0,0,.1);
+	 -webkit-box-shadow:2px 4px 4px rgba(0,0,0,.1);
+	 box-shadow:2px 4px 4px rgba(0,0,0,.1);
+}
+}
+.page-404{
+	width:180px !important;
+}
+.gh-admin-main{
+	width:1170px;
+	margin:0 auto;
+}
+.gh-score-add{
+	position:relative;
+	top:-30px;
+}
+.user-level-first{
+	border-radius:50px;
+	font-size:1.2rem;
+	font-weight:normal;
+	padding:4px 10px;
+	width:1rem;
+	background:#eff5f9;
+	color:#b0bbc2;
+}
+.user-level-second{
+	border-radius:50px;
+	font-size:1.2rem;
+	font-weight:normal;
+	padding:4px 6px;
+	background:#fffbf5;
+	color:#febb58;
+}
+.am-modal-dialog{
+	background:#fff !important;
+	border-radius:6px !important;
+}
+.lv-frozenScore-bg{
+	border-radius:5px;
+	height:12rem;
+	background: -webkit-linear-gradient(left, #29b958 , #29b958); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #29b958, #29b958); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #29b958, #29b958); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #29b958 , #29b958); /* 标准的语法 */
+}
+.lv-score-bg{
+	border-radius:5px;
+	height:12rem;
+	background: -webkit-linear-gradient(left, #fe6f29 , #fe9251); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #fe6f29, #fe9251); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #fe6f29, #fe9251); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #fe6f29 , #fe9251); /* 标准的语法 */
+}
+.lv-amount-bg{
+	border-radius:5px;
+	height:12rem;
+	background: -webkit-linear-gradient(left, #ff535f , #ff7373); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #ff535f, #ff7373); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #ff535f, #ff7373); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #ff535f , #ff7373); /* 标准的语法 */
+}
+.lv-cash-bg{
+	border-radius:50px;
+	background: -webkit-linear-gradient(down, #d99a56 , #ffd373); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(top, #d99a56, #ffd373); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(top, #d99a56, #ffd373); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to top, #d99a56 , #ffd373); /* 标准的语法 */
+}
+.lv-give-bg{
+	border-radius:50px;
+	background: -webkit-linear-gradient(down, #ff5847 , #ff8a7e); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(top, #ff5847 , #ff8a7e); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(top, #ff5847 , #ff8a7e); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to top,#ff5847 , #ff8a7e); /* 标准的语法 */
+}
+.lv-bitcoin-bg{
+	border-radius:5px;
+	height:12rem;
+	background: -webkit-linear-gradient(down, #fbac1f , #fcbc4a); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(top,  #fbac1f , #fcbc4a); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(top,  #fbac1f , #fcbc4a); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to top,  #fbac1f , #fcbc4a); /* 标准的语法 */
+}
+.lv-ticket-bg{
+	border-radius:5px;
+	height:12rem;
+	background: -webkit-linear-gradient(down, #2983fe , #5ba0ff); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(top,  #2983fe , #5ba0ff); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(top, #2983fe , #5ba0ff); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to top, #2983fe , #5ba0ff); /* 标准的语法 */
+}
+.lv-bank-bg{
+	background: url(/img/bank-bg.png) no-repeat;
+    background-size: 100% 100%;
+    height: 9rem;
+}
+.lv-cash-bank{
+	position:absolute;
+	top: 1.4rem;
+    left: 5.6rem;
+}
+.lv-cash-cardNum{
+	position:absolute;
+	bottom: 1.8rem;
+    right: 2.6rem;
+}
+.lv-alipay-bg{
+	background: url(/img/alipay-bg.png) no-repeat;
+    background-size: 100% 100%;
+    height: 9rem;
+}
+.lv-cash-ali{
+	position:absolute;
+	top: 4.8rem;
+    left: 2.2rem;
+}
+.lv-default-bank{
+	position: absolute;
+    padding: 0.1rem 1.2rem;
+    background: #fff;
+    top: 0.6rem;
+    right: 1.2rem;
+    color: #7c84b3;
+    border-radius: 5px;
+}
+.lv-default-alipay{
+	position:absolute;
+	padding: 0.1rem 1.2rem;
+    background: #fff;
+	top: 0.8rem;
+    right: 1.2rem;
+   	color: #7c84b3;
+    border-radius: 5px;
+}
+
+.lv-block-index{
+	width:48%;
+	margin-right:1%;
+	margin-left:1%;
+	float:left;
+}
+.lv-block{
+	display:inline-block;
+}
+.lv-up-choose{
+	width:10rem;
+	height:10rem;
+	line-height:10rem;
+	border-radius:50%;
+	-moz-box-shadow:0px 2px 8px rgba(0,0,0,.2);
+	 -webkit-box-shadow:0px 2px 8px rgba(0,0,0,.2);
+	 box-shadow:0px 2px 8px rgba(0,0,0,.2);
+}
+.am-tabs-d2 .am-tabs-nav>.am-active:after{
+	position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border: 0px rgba(0,0,0,0) solid !important;
+    content: "";
+    z-index: 1;
+    border-bottom-color: #0e90d2;
+}
+.am-tabs-d2 .am-tabs-nav>.am-active{
+	color:#23bd23 !important;
+	background-color: #fff !important;
+	border-bottom: 2px solid #23bd23 !important;
+}
+.am-tabs-d2 .am-tabs-nav>.am-active a {
+   color:#23bd23 !important;
+}
+[data-am-widget=tabs] {
+    margin: 10px 0!important;
+}

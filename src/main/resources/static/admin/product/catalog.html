@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>商品分类</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/jquery.pagination.js"></script>
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/site/admin/gh-admin.js"></script>
+<script src="/site/admin/product/catalog.js"></script>
+<link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+<link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+<link rel="stylesheet" href="/css/gh.css" />
+</head>
+<body>
+	<div class="gh-bg-top">
+		<div class="gh-padding-vertical-xs  gh-admin-main am-cf">
+			<a href="/admin/index.html"
+				class="gh-text-white lv-text-bold am-fl gh-text-xl ">教师管理后台</a>
+			<div class="am-fr gh-margin-top-xxs">
+				<span class="gh-text-white" id="admin-user">用户</span> <span
+					class="gh-text-white" id="admin-out">退出系统</span>
+			</div>
+		</div>
+	</div>
+	<div class="gh-bg">
+		<div class="container">
+			<ul class="mainnav">
+				<li class="am-dropdown nav-tab" data-am-dropdown>
+					<a class=" am-dropdown-toggle " data-am-dropdown-toggle> 
+					<img src="/img/admin-user-grey.png" /> <span>用户</span>
+				</a>
+					<ul class="am-dropdown-content">
+						<li><a href="/admin/user/list.html">用户列表</a></li>
+						<li><a href="/admin/user/qualification.html">资格列表</a></li>
+					</ul></li>
+				<li class="am-dropdown nav-tab am-hide" data-am-dropdown>
+					<a class=" am-dropdown-toggle gh-text-black" data-am-dropdown-toggle> 
+					<img src="/img/admin-setting-black.png" /> <span>商品</span>
+				</a>
+					<ul class="am-dropdown-content">
+						<li><a href="/admin/product/catalog.html">商品分类</a></li>
+					</ul></li>
+				<li class="am-dropdown nav-tab" data-am-dropdown>
+					<a class=" am-dropdown-toggle" data-am-dropdown-toggle>
+						<img src="/img/admin-score-grey.png" /> <span>记录</span>
+					</a>
+					<ul class="am-dropdown-content">
+						<li><a href="/admin/treasure/list.html">积分记录</a></li>
+						<li><a href="/admin/bitcoin/list.html">报单积分记录</a></li>
+						<li><a href="/admin/replenish/list.html">补货记录</a></li>
+						<li><a href="/admin/recharge/list.html">充值记录</a></li>
+					</ul>
+				</li>
+				<li class="am-dropdown nav-tab" data-am-dropdown><a
+					class=" am-dropdown-toggle" data-am-dropdown-toggle> <img
+						src="/img/admin-setting-grey.png" /> <span>提现</span>
+					</a>
+					<ul class="am-dropdown-content">
+						<li><a href="/admin/payout/records.html">提现申请</a></li>
+					</ul>
+				</li>
+				<li class="am-dropdown nav-tab" data-am-dropdown>
+					<a class=" am-dropdown-toggle gh-text-black" data-am-dropdown-toggle> <img
+						src="/img/admin-setting-black.png" /> <span>配置</span>
+					</a>
+					<ul class="am-dropdown-content">
+						<li><a href="/admin/config/percent.html">转化率</a></li>
+						<li><a href="/admin/config/rule.html">规则</a></li>
+						<li><a href="/admin/config/levelUp.html">级别</a></li>
+						<li><a href="/admin/config/payoutsetting.html">提现</a></li>
+						<li><a href="/admin/config/ticket.html">消费券</a></li>
+						<li><a href="/admin/config/replenish.html">补货</a></li>
+					</ul></li>
+				<li class="am-dropdown nav-tab" data-am-dropdown><a
+					class=" am-dropdown-toggle " data-am-dropdown-toggle> <img
+						src="/img/admin-setting-grey.png" /> <span>系统</span>
+					</a>
+					<ul class="am-dropdown-content">
+						<li><a href="/admin/admin/list.html">管理员</a></li>
+						<li><a href="/admin/role/list.html">角色</a></li>
+						<li><a href="/admin/permission/list.html">权限</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class=" am-margin-top-lg ">
+		<div class=" gh-admin-main ">
+			<div class="gh-padding-title  gh-title-bottom ">
+				<span>商品分类</span>
+			</div>
+			<div class=" lv-relative am-text-sm ">
+				<div class="gh-padding-sm gh-bg am-margin-bottom-xs gh-border-radius">
+					<input type="text" class="am-form-field gh-search am-text-sm form-control am-fl"  id="catalog-title" >
+					<button
+						class="gh-padding-vertical-xs  gh-btn-blue gh-margin-left-sm" id="catalog-add">添加一级分类</button>
+				</div>
+				<div class="gh-bg  gh-border-radius">
+					<ul class="am-list admin-sidebar-list" id="collapase-nav">
+					</ul>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="gh-admin-footer am-cf">
+		<hr>
+		<span class="am-fr gh-margin-bottom-sm gh-margin-right-sm">©2017
+			浙江耀阳科技发展有限公司</span>
+	</div>
+</body>
+</html>

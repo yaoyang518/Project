@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>权限管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="/assets/js/amazeui.min.js"></script>
+    <script src="/site/admin/gh-admin.js"></script>
+    <script src="/site/admin/permission/edit.js"></script>
+    <link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+    <link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="/css/gh.css"/>
+</head>
+<body>
+<div class=" am-margin-top-lg ">
+    <div class=" gh-admin-main ">
+        <div class="gh-padding-title  gh-title-bottom ">
+            <span id="action">添加权限</span>
+        </div>
+        <div class="gh-bg gh-padding-sm am-text-sm gh-border-radius" style="height: 500px">
+            <div class="gh-margin-left-xl">
+                <div class="clearfix gh-margin-top-sm">
+                    <span class="gh-margin-right-sm am-fl" style="line-height: 32px;">名称:</span>
+                    <input class="form-control am-form-field am-text-sm gh-search-xl  am-margin-right-sm am-fl"
+                           id="name" type="text">
+                            <span id="nameError" class="gh-error-text"></span>
+                </div>
+                <div class="clearfix gh-margin-top-sm">
+                    <span class="gh-margin-right-sm am-fl" style="line-height: 32px;">类型:</span>
+                    <select id="resourceType" class="gh-select-sm">
+                        <option value="menu">菜单</option>
+                        <option value="button">按钮</option>
+                    </select>
+                </div>
+                <div class="clearfix gh-margin-top-sm am-hide">
+                    <span class="gh-margin-right-sm am-fl" style="line-height: 32px;">路径:</span>
+                    <input class="form-control am-form-field am-text-sm gh-search-xl  am-margin-right-sm am-fl"
+                           id="url" name="textfield" type="text">
+                            <span id="urlError" class="gh-error-text"></span>
+                </div>
+                <div class="clearfix gh-margin-top-sm">
+                    <span class="gh-margin-right-sm am-fl" style="line-height: 32px;">代码:</span>
+                    <input class="form-control am-form-field am-text-sm gh-search-xl  am-margin-right-sm am-fl"
+                           id="permission" name="textfield" type="text">
+                            <span id="permissionError" class="gh-error-text"></span>
+                </div>
+                <div class="clearfix gh-margin-top-sm">
+                    <span class="gh-margin-right-sm am-fl" style="line-height: 32px;">描述:</span>
+                    <textarea class="gh-textarea" rows="5" id="description"></textarea>
+                </div>
+                <div class="gh-margin-top-sm" style="width:370px">
+                 	<a href="javascript:history.go(-1);">
+                    	<button class="gh-btn-blue gh-margin-right-sm am-fr">取消</button>
+                    </a>
+                    <button class="gh-btn-blue gh-margin-right-sm am-fr" id="save">
+                    	确定
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

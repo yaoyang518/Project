@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>用户信息</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/jquery.pagination.js"></script>
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/site/admin/gh-admin.js"></script>
+<script src="/site/admin/user/view.js"></script>
+<link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+<link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+<link rel="stylesheet" href="/css/gh.css" />
+</head>
+<body>
+	<div class=" am-margin-top-lg ">
+		<div class=" gh-admin-main ">
+			<div class="gh-padding-title gh-title-bottom ">
+				<span>用户信息</span>
+			</div>
+			<div class="gh-bg gh-padding-sm lv-relative gh-border-radius">
+				<div class="container am-tabs" data-am-tabs>
+					<ul id="myTab" class="am-tabs-nav am-nav am-nav-tabs">
+						<li class="gh-view "><a>信息</a></li>
+						<li class="gh-view "><a>积分</a></li>
+						<li class="gh-view"><a>上级</a></li>
+						<li class="gh-view"><a>下级</a></li>
+						<li class="gh-view"><a>余额</a></li>
+						<li class="gh-view"><a>报单积分</a></li>
+						<li class="gh-view"><a>消费券</a></li>
+					</ul>
+				</div>
+				<div>
+					<div class="gh-margin-left-xl gh-hide view-list am-text-sm"
+						id="message">
+						<div
+							class="gh-btn-blue gh-btn-sm am-fr gh-score-add gh-set-top gh-hide"
+							data-toggle="modal" id="setLevel" style="top: -60px;">调整级别</div>
+						<!-- 模态框（Modal） -->
+						<div class="am-modal am-modal-alert" id="LevelModal" tabindex="-1">
+							<div class="am-modal-dialog">
+								<div class="am-modal-header">
+									<div class="am-modal-hd">调整级别</div>
+								</div>
+								<div class="am-modal-bd am-text-sm">
+									<div class="am-cf gh-margin-top-sm">
+										<span class="gh-margin-right-sm " style="line-height: 32px;">用户名称:</span>
+										<input class="form-control gh-search-xl gh-select-sm"
+											id="levelUsername" disabled="disabled" type="text">
+									</div>
+									<div class="am-cf gh-margin-top-sm">
+										<span class="gh-margin-right-sm " style="line-height: 32px;">当前级别:</span>
+										<input class="form-control gh-search-xl gh-select-sm"
+											disabled="disabled" id="level-now" type="text">
+									</div>
+									<div class="am-cf gh-margin-top-sm">
+										<span class="gh-margin-right-sm " style="line-height: 32px;">可选级别:</span>
+										<select id="levelType" class="gh-select-sm">
+										</select>
+									</div>
+									<div class="am-cf gh-margin-top-sm" id="amount-ipt">
+										<span class="gh-margin-right-sm " style="line-height: 32px;">升级金额:</span>
+										<input class="form-control gh-search-xl gh-select-sm"
+											 id="amount" type="text">
+									</div>
+									<div class="am-cf gh-margin-top-sm">
+										<span id="level-err" class="gh-text-red"></span>
+									</div>
+								</div>
+								<div class="am-modal-footer">
+									<div class="am-margin-vertical-sm">
+										<button class="gh-btn-blue gh-margin-left-sm" id="levelSet">确定</button>
+										<button class="gh-btn-blue gh-margin-left-sm"
+											data-am-modal-close>取消</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div
+							class="gh-btn-blue am-margin-right-sm gh-btn-sm am-fr gh-score-add gh-set-top gh-hide"
+							data-toggle="modal" id="setReplenish" style="top: -60px;">补货调整</div>
+						<!-- 模态框（Modal） -->
+						<div class="am-modal am-modal-alert" id="replenishModal" tabindex="-1">
+							<div class="am-modal-dialog">
+								<div class="am-modal-header">
+									<div class="am-modal-hd">补货调整</div>
+								</div>
+								<div class="am-modal-bd am-text-sm">
+									<div class="am-cf gh-margin-top-sm">
+										<span class="gh-margin-right-sm " style="line-height: 32px;">用户名称:</span>
+										<input class="form-control gh-search-xl gh-select-sm"
+											id="replenishUsername" disabled="disabled" type="text">
+									</div>
+									<div class="am-cf gh-margin-top-sm">
+										<span class="gh-margin-right-sm " style="line-height: 32px;">补货金额:</span>
+										<input class="form-control gh-search-xl gh-select-sm"
+											 id="replenish" type="text">
+									</div>
+									<div class="am-cf gh-margin-top-sm">
+										<span id="replenish-err" class="gh-text-red"></span>
+									</div>
+								</div>
+								<div class="am-modal-footer">
+									<div class="am-margin-vertical-sm">
+										<button class="gh-btn-blue gh-margin-left-sm" id="replenishSet">确定</button>
+										<button class="gh-btn-blue gh-margin-left-sm"
+											data-am-modal-close>取消</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 模态框充值提示（Modal） -->
+							<div class="am-modal am-modal-alert" id="replenishModal-tips"
+								tabindex="-1">
+								<div class="am-modal-dialog">
+									<div class="modal-header">
+										<div class="am-modal-hd" id="replenish-title"></div>
+										<div class="am-modal-hd" id="replenish-warn"></div>
+									</div>
+									<div class="am-modal-footer">
+										<div class="am-margin-vertical-sm">
+											<button class="gh-btn-blue gh-margin-left-sm"
+												id="success-replenish">确定</button>
+										</div>
+									</div>
+								</div>
+							</div>		
+						<div class="am-cf gh-margin-top-sm">
+							<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">&nbsp;&nbsp;&nbsp;&nbsp;ID:</span>
+							<input
+								class="form-control gh-search-xl am-text-sm am-form-field am-margin-right-sm am-fl"
+								id="id" disabled type="text">
+						</div>
+						<div class="am-cf gh-margin-top-sm">
+							<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">级别:</span>
+							<input
+								class="form-control gh-search-xl am-text-sm am-form-field am-margin-right-sm am-fl"
+								id="level" disabled type="text">
+						</div>
+						<div class="am-cf gh-margin-top-sm">
+							<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">名称:</span>
+							<input
+								class="form-control gh-search-xl am-text-sm am-form-field am-margin-right-sm am-fl"
+								id="name" name="textfield" type="text"> <span
+								id="nameError" class="gh-error-text"></span>
+						</div>
+
+						<div class="am-cf gh-margin-top-sm">
+							<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">手机:</span>
+							<input
+								class="form-control gh-search-xl am-text-sm am-form-field am-margin-right-sm am-fl"
+								id="phone" disabled type="text">
+						</div>
+
+						<div class="am-cf gh-margin-top-sm">
+							<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">密码:</span>
+							<input
+								class="form-control gh-search-xl am-text-sm am-form-field  am-margin-right-sm am-fl"
+								id="code" placeholder="请输入6-10位密码，默认不修改" type="text">
+						</div>
+
+						<div class="am-cf gh-margin-top-sm">
+							<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">上级:</span>
+							<input
+								class="form-control gh-search-xl am-form-field  am-text-sm am-margin-right-sm am-fl"
+								id="uper" disabled type="text">
+						</div>
+
+						<div class="am-cf gh-margin-top-sm">
+							<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">状态:</span>
+							<input
+								class="form-control gh-search-xl am-form-field am-text-sm  am-margin-right-sm am-fl"
+								id="state" disabled type="text">
+						</div>
+						<div class="gh-margin-top-sm am-cf" style="width: 360px;">
+							<a href="javascript:history.go(-1);">
+								<button class="gh-btn-blue gh-margin-right-sm am-fr">取消</button>
+							</a>
+							<button class="gh-btn-blue gh-margin-right-sm am-fr" id="save">确定</button>
+						</div>
+					</div>
+					<div class="gh-margin-left-15 gh-hide view-list am-text-sm">
+						<div class=" gh-bg">
+							<div class="gh-btn-blue gh-btn-sm am-fr gh-score-add gh-set-top"
+								data-toggle="modal" id="confirm">充值积分</div>
+							<!-- 模态框（Modal） -->
+							<div class="am-modal am-modal-alert" id="scoreModal"
+								tabindex="-1">
+								<div class="am-modal-dialog">
+									<div class="am-modal-header">
+										<div class="am-modal-hd">修改积分</div>
+									</div>
+									<div class="am-modal-bd am-text-sm">
+										<div class="am-cf gh-margin-top-sm">
+											<span class="gh-margin-right-sm " style="line-height: 32px;">用户名称:</span>
+											<input class="form-control gh-search-xl gh-select-sm"
+												id="scoreUsername" disabled="disabled" type="text">
+										</div>
+										<div class="am-cf gh-margin-top-sm">
+											<span class="gh-margin-right-sm " style="line-height: 32px;">修改选项:</span>
+											<select id="Type" class="gh-select-sm">
+												<option value="add">增加</option>
+												<option value="minus">减少</option>
+											</select>
+										</div>
+										<div class="am-cf gh-margin-top-sm">
+											<span class="gh-margin-right-sm " style="line-height: 32px;">积分类型:</span>
+											<select id="scoreType" class="gh-select-sm">
+												<option value="score">兑换积分</option>
+												<option value="frozen">冻结积分</option>
+											</select>
+										</div>
+										<div class="am-cf gh-margin-top-sm">
+											<span class="gh-margin-right-sm " style="line-height: 32px;">充值积分:</span>
+											<input class="form-control gh-search-xl gh-select-sm"
+												id="score" type="text">
+										</div>
+										<div class="am-cf gh-margin-top-sm">
+											<span id="score-err" class="gh-text-red"></span>
+										</div>
+									</div>
+									<div class="am-modal-footer">
+										<div class="am-margin-vertical-sm">
+											<button class="gh-btn-blue gh-margin-left-sm" id="score-add">确定</button>
+											<button class="gh-btn-blue gh-margin-left-sm"
+												data-am-modal-close>取消</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 模态框充值提示（Modal） -->
+							<div class="am-modal am-modal-alert" id="scoreModal-tips"
+								tabindex="-1">
+								<div class="am-modal-dialog">
+									<div class="modal-header">
+										<div class="am-modal-hd" id="score-title"></div>
+										<div class="am-modal-hd" id="score-warn"></div>
+									</div>
+									<div class="am-modal-footer">
+										<div class="am-margin-vertical-sm">
+											<button class="gh-btn-blue gh-margin-left-sm"
+												id="success-back">确定</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<table class="am-table am-table-hover"
+								style="position: relative; top: -20px;">
+								<thead class="am-text-sm">
+									<tr>
+										<th style="width: 15%" class="am-text-center">来源</th>
+										<th style="width: 10%" class="am-text-center">类型</th>
+										<th style="width: 15%" class="am-text-center">积分</th>
+										<th style="width: 15%" class="am-text-center">兑换积分</th>
+										<th style="width: 15%" class="am-text-center">冻结积分</th>
+										<th style="width: 15%" class="am-text-center">总积分</th>
+										<th style="width: 15%" class="am-text-center">时间</th>
+									</tr>
+								</thead>
+								<tbody class="am-text-center am-text-sm" id="gh-admin-list">
+
+								</tbody>
+							</table>
+							<nav aria-label="Page navigation" class="gh-position-aria"
+								id="scorePage"></nav>
+						</div>
+					</div>
+
+					<div class="gh-margin-left-15 gh-hide view-list am-text-sm">
+						<div class=" gh-bg">
+							<div class="gh-btn-blue gh-btn-sm am-fr gh-score-add gh-set-top"
+								data-toggle="modal" id="setUp">调整上级</div>
+							<!-- 模态框调整上级提示（Modal） -->
+							<div class="am-modal am-modal-alert am-text-sm"
+								id="partentModal-tips" tabindex="-2">
+								<div class="am-modal-dialog">
+									<div class="am-modal-header">
+										<div class="am-modal-hd" id="partent-title"></div>
+									</div>
+									<div class="am-modal-footer">
+										<div class="am-margin-vertical-sm">
+											<button class="gh-btn-blue gh-margin-left-sm"
+												id="partent-back">确定</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 模态框（Modal） -->
+							<div class="am-modal am-modal-alert am-text-sm" id="setUpModal"
+								tabindex="-1">
+								<div class="am-modal-dialog">
+									<div class="am-modal-header">
+										<div class="am-modal-hd">修改上级</div>
+									</div>
+									<div class="am-modal-body lv-padding-0 text-center">
+										<div class="am-cf gh-margin-top-sm">
+											<span class="gh-margin-right-sm gh-margin-left-xl am-fl"
+												style="line-height: 32px;">用户账户:</span> <input
+												class="form-control gh-search-xl gh-select-sm am-margin-right-sm am-fl"
+												id="up-user" disabled="disabled" type="text">
+										</div>
+										<div class="am-cf gh-margin-top-sm">
+											<span class="gh-margin-right-sm gh-margin-left-xl am-fl"
+												style="line-height: 32px;">当前上级:</span> <input
+												class="form-control gh-search-xl gh-select-sm am-margin-right-sm am-fl"
+												id="up-up" disabled="disabled" type="text">
+										</div>
+										<div class="am-cf gh-margin-top-sm">
+											<span class="gh-margin-right-sm gh-margin-left-xl am-fl"
+												style="line-height: 32px;">修改上级:</span> <input
+												class="form-control gh-search-xl gh-select-sm  am-margin-right-sm am-fl"
+												id="parentId" type="text">
+										</div>
+										<div class="am-cf gh-margin-top-sm">
+											<span id="up-err" class="gh-text-red"></span>
+										</div>
+									</div>
+									<div class="am-modal-footer">
+										<div class="am-margin-vertical-sm">
+											<button class="gh-btn-blue gh-margin-left-sm"
+												data-am-modal-confirm id="up-set">确定</button>
+											<button class="gh-btn-blue gh-margin-left-sm" id="setClose">取消</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<table class="am-table am-table-hover" id="gh-up-header"
+								style="position: relative; top: -20px;">
+								<thead>
+									<tr>
+										<th style="width: 10%" class="am-text-center">ID</th>
+										<th style="width: 20%" class="am-text-center">名称</th>
+										<th style="width: 20%" class="am-text-center">手机号</th>
+										<th style="width: 20%" class="am-text-center">等级</th>
+										<th style="width: 30%" class="am-text-center">注册时间</th>
+									</tr>
+								</thead>
+								<tbody class="am-text-center" id="gh-up-list">
+
+								</tbody>
+							</table>
+							<div class="am-text-center gh-hide" id="gh-up-date">
+								<br /> 暂无上级信息
+							</div>
+						</div>
+					</div>
+					<div class="gh-margin-left-15 am-text-sm gh-hide view-list">
+						<div class=" gh-bg">
+							<table class="am-table am-table-hover am-text-sm"
+								id="gh-junior-header">
+								<thead>
+									<tr>
+										<th style="width: 10%" class="am-text-center">ID</th>
+										<th style="width: 20%" class="am-text-center">名称</th>
+										<th style="width: 20%" class="am-text-center">手机号</th>
+										<th style="width: 20%" class="am-text-center">等级</th>
+										<th style="width: 30%" class="am-text-center">注册时间</th>
+									</tr>
+								</thead>
+								<tbody class="am-text-center am-text-sm" id="gh-down-list">
+
+								</tbody>
+							</table>
+							<div class="am-text-center gh-hide" id="gh-junior-date">
+								<br /> 暂无下级信息
+							</div>
+							<nav aria-label="Page navigation" class="gh-position-aria"
+								id="juniorPage"></nav>
+						</div>
+					</div>
+					<div class="gh-margin-left-15 am-text-sm gh-hide view-list">
+					<div class="gh-btn-blue gh-btn-sm am-fr gh-score-add gh-set-top"
+							data-toggle="modal" id="balance-add" style="top: -40px;">余额调整</div>
+					<!-- 模态框（Modal） -->
+						<div class="am-modal am-modal-alert" id="balanceModal" tabindex="-1">
+							<div class="am-modal-dialog">
+								<div class="am-modal-header">
+									<div class="am-modal-hd">余额调整</div>
+								</div>
+								<div class="am-modal-bd am-text-sm">
+									<div class="am-cf gh-margin-top-sm">
+										<span class="gh-margin-right-sm " style="line-height: 32px;">用户名称:</span>
+										<input class="form-control gh-search-xl gh-select-sm"
+											id="balanceUsername" disabled="disabled" type="text">
+									</div>
+									<div class="am-cf gh-margin-top-sm">
+											<span class="gh-margin-right-sm " style="line-height: 32px;">修改选项:</span>
+											<select id="balanceType" class="gh-select-sm">
+												<option value="add">增加</option>
+												<option value="minus">减少</option>
+											</select>
+										</div>
+									<div class="am-cf gh-margin-top-sm">
+										<span class="gh-margin-right-sm " style="line-height: 32px;">用户金额:</span>
+										<input class="form-control gh-search-xl gh-select-sm"
+											 id="balance" type="text">
+									</div>
+									<div class="am-cf gh-margin-top-sm">
+										<span id="balance-err" class="gh-text-red"></span>
+									</div>
+								</div>
+								<div class="am-modal-footer">
+									<div class="am-margin-vertical-sm">
+										<button class="gh-btn-blue gh-margin-left-sm" id="balanceSet">确定</button>
+										<button class="gh-btn-blue gh-margin-left-sm"
+											data-am-modal-close>取消</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 模态框充值提示（Modal） -->
+							<div class="am-modal am-modal-alert" id="balanceModal-tips"
+								tabindex="-1">
+								<div class="am-modal-dialog">
+									<div class="modal-header">
+										<div class="am-modal-hd" id="balance-title"></div>
+										<div class="am-modal-hd am-text-danger" id="balance-warn"></div>
+									</div>
+									<div class="am-modal-footer">
+										<div class="am-margin-vertical-sm">
+											<button class="gh-btn-blue gh-margin-left-sm"
+												id="success-balance">确定</button>
+										</div>
+									</div>
+								</div>
+							</div>	
+						<div class=" gh-bg">
+							<table class="am-table am-table-hover am-text-sm" id="gh-balance-header" style="position: relative; top: -20px;">
+								<thead>
+									<tr>
+										<th style="width: 15%" class="am-text-center">来源</th>
+										<th style="width: 10%" class="am-text-center">类型</th>
+										<th style="width: 15%" class="am-text-center">金额</th>
+										<th style="width: 15%" class="am-text-center">总额</th>
+										<th style="width: 15%" class="am-text-center">时间</th>
+									</tr>
+								</thead>
+								<tbody class="am-text-center am-text-sm" id="gh-balance-list">
+
+								</tbody>
+							</table>
+							<div class="am-text-center gh-hide" id="gh-balance-data">
+								<br /> 暂无余额信息
+							</div>
+							<nav aria-label="Page navigation" class="gh-position-aria"
+								id="balancePage"></nav>
+						</div>
+					</div>
+					<div class="gh-margin-left-15 am-text-sm gh-hide view-list">
+					<div class="gh-btn-blue gh-btn-sm am-fr gh-score-add gh-set-top"
+							data-toggle="modal" id="bitcoin-add" style="top: -40px;">报单积分调整</div>
+					<!-- 模态框（Modal） -->
+						<div class="am-modal am-modal-alert" id="bitcoinModal" tabindex="-1">
+							<div class="am-modal-dialog">
+								<div class="am-modal-header">
+									<div class="am-modal-hd">报单积分调整</div>
+								</div>
+								<div class="am-modal-bd am-text-sm">
+									<div class="am-cf gh-margin-top-sm">
+										<span class="gh-margin-right-sm " style="line-height: 32px;">用户名称:</span>
+										<input class="form-control gh-search-xl gh-select-sm"
+											id="bitcoinUsername" disabled="disabled" type="text">
+									</div>
+									<div class="am-cf gh-margin-top-sm">
+											<span class="gh-margin-right-sm " style="line-height: 32px;">修改选项:</span>
+											<select id="bitcoinType" class="gh-select-sm">
+												<option value="add">增加</option>
+												<option value="minus">减少</option>
+											</select>
+										</div>
+									<div class="am-cf gh-margin-top-sm">
+										<span class="gh-margin-right-sm " style="line-height: 32px;">报单金额:</span>
+										<input class="form-control gh-search-xl gh-select-sm"
+											 id="bitcoin" type="text">
+									</div>
+									<div class="am-cf gh-margin-top-sm">
+										<span id="bitcoin-err" class="gh-text-red"></span>
+									</div>
+								</div>
+								<div class="am-modal-footer">
+									<div class="am-margin-vertical-sm">
+										<button class="gh-btn-blue gh-margin-left-sm" id="bitcoinSet">确定</button>
+										<button class="gh-btn-blue gh-margin-left-sm"
+											data-am-modal-close>取消</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 模态框充值提示（Modal） -->
+							<div class="am-modal am-modal-alert" id="bitcoinModal-tips"
+								tabindex="-1">
+								<div class="am-modal-dialog">
+									<div class="modal-header">
+										<div class="am-modal-hd" id="bitcoin-title"></div>
+										<div class="am-modal-hd" id="bitcoin-warn"></div>
+									</div>
+									<div class="am-modal-footer">
+										<div class="am-margin-vertical-sm">
+											<button class="gh-btn-blue gh-margin-left-sm"
+												id="success-bitcoin">确定</button>
+										</div>
+									</div>
+								</div>
+							</div>			
+						<div class=" gh-bg">
+							<table class="am-table am-table-hover am-text-sm" id="gh-bitcoin-header" style="position: relative; top: -20px;">
+								<thead>
+									<tr>
+										<th style="width: 15%" class="am-text-center">来源</th>
+										<th style="width: 10%" class="am-text-center">类型</th>
+										<th style="width: 15%" class="am-text-center">金额</th>
+										<th style="width: 15%" class="am-text-center">总额</th>
+										<th style="width: 15%" class="am-text-center">时间</th>
+									</tr>
+								</thead>
+								<tbody class="am-text-center am-text-sm" id="gh-bitcoin-list">
+
+								</tbody>
+							</table>
+							<div class="am-text-center gh-hide" id="gh-bitcoin-data">
+								<br /> 暂无报单积分信息
+							</div>
+							<nav aria-label="Page navigation" class="gh-position-aria"
+								id="bitcoinPage"></nav>
+						</div>
+					</div>
+					<div class="gh-margin-left-15 am-text-sm gh-hide view-list">
+						<div class="gh-btn-blue gh-btn-sm am-fr gh-score-add gh-set-top"
+							data-toggle="modal" id="ticket-add" style="top: -40px;">消费券调整</div>
+					<!-- 模态框（Modal） -->
+						<div class="am-modal am-modal-alert" id="ticketModal" tabindex="-1">
+							<div class="am-modal-dialog">
+								<div class="am-modal-header">
+									<div class="am-modal-hd">消费券调整</div>
+								</div>
+								<div class="am-modal-bd am-text-sm">
+									<div class="am-cf gh-margin-top-sm">
+										<span class="gh-margin-right-sm " style="line-height: 32px;">用户名称:</span>
+										<input class="form-control gh-search-xl gh-select-sm"
+											id="ticketUsername" disabled="disabled" type="text">
+									</div>
+									<div class="am-cf gh-margin-top-sm">
+											<span class="gh-margin-right-sm " style="line-height: 32px;">修改选项:</span>
+											<select id="ticketType" class="gh-select-sm">
+												<option value="add">增加</option>
+												<option value="minus">减少</option>
+											</select>
+										</div>
+									<div class="am-cf gh-margin-top-sm">
+										<span class="gh-margin-right-sm " style="line-height: 32px;">消费券额:</span>
+										<input class="form-control gh-search-xl gh-select-sm"
+											 id="ticket" type="text">
+									</div>
+									<div class="am-cf gh-margin-top-sm">
+										<span id="ticket-err" class="gh-text-red"></span>
+									</div>
+								</div>
+								<div class="am-modal-footer">
+									<div class="am-margin-vertical-sm">
+										<button class="gh-btn-blue gh-margin-left-sm" id="ticketSet">确定</button>
+										<button class="gh-btn-blue gh-margin-left-sm"
+											data-am-modal-close>取消</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 模态框充值提示（Modal） -->
+							<div class="am-modal am-modal-alert" id="ticketModal-tips"
+								tabindex="-1">
+								<div class="am-modal-dialog">
+									<div class="modal-header">
+										<div class="am-modal-hd" id="ticket-title"></div>
+										<div class="am-modal-hd" id="ticket-warn"></div>
+									</div>
+									<div class="am-modal-footer">
+										<div class="am-margin-vertical-sm">
+											<button class="gh-btn-blue gh-margin-left-sm"
+												id="success-ticket">确定</button>
+										</div>
+									</div>
+								</div>
+							</div>	
+						<div class=" gh-bg">
+							<table class="am-table am-table-hover am-text-sm" id="gh-ticket-header" style="position: relative; top: -20px;">
+								<thead>
+									<tr>
+										<th style="width: 15%" class="am-text-center">来源</th>
+										<th style="width: 10%" class="am-text-center">类型</th>
+										<th style="width: 15%" class="am-text-center">金额</th>
+										<th style="width: 15%" class="am-text-center">总额</th>
+										<th style="width: 15%" class="am-text-center">时间</th>
+									</tr>
+								</thead>
+								<tbody class="am-text-center am-text-sm" id="gh-ticket-list">
+
+								</tbody>
+							</table>
+							<div class="am-text-center gh-hide" id="gh-ticket-data">
+								<br /> 暂无消费券信息
+							</div>
+							<nav aria-label="Page navigation" class="gh-position-aria"
+								id="ticketPage"></nav>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

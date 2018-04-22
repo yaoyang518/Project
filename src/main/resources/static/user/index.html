@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>个人中心</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/assets/js/dropload.min.js"></script>
+<script src="/site/gh-user.js"></script>
+<script src="/site/user/index.js"></script>
+<link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+<link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+<link rel="stylesheet" href="/css/lv.css" />
+</head>
+<body>
+	<div class=" am-cf  am-margin-horizontal-sm content am-margin-top">
+		<div class="am-cf jm-margin-bottom-sm lv-relative">
+			<div class="am-u-sm-9">
+				<div class="lv-text-xl lv-text-bold">
+					<span class="am-margin-right-xs am-text-lg">个人中心</span>
+					<span id="uer-level1"></span>
+					<span id="uer-level2"></span>
+				</div>
+				<div class="am-cf">
+					<div class="am-margin-top-xs">
+						 <img src="/img/gh-user.png" class="lv-icon-xs am-margin-right-xs lv-icon-top" /><span id="user-phone">手机号：</span>
+						 <img src="/img/gh-id.png" class="lv-icon-xs am-margin-horizontal-xs lv-icon-top" /><span id="user-id"></span>
+					</div>
+					<div>
+						<img src="/img/gh-user.png" class="lv-icon-xs am-margin-right-xs lv-icon-top" /><span id="user-up"></span>
+					</div>
+				</div>
+			</div>
+			<div class="am-u-sm-3"  id="logout">
+				<div class="am-cf am-fr">
+					<img src="/img/gh-header.png" class="am-circle jm-margin-right-sm am-fl gh-header-img">
+				</div>
+				<div class="am-fr am-margin-top-xs am-text-xs lv-text-grey">安全退出</div>   
+			</div>
+		</div>
+		<div class="am-margin-vertical-sm" id="up">
+			<a href="/user/payment/upChoose.html"><img src="/img/up-going.png" style="width:100%" /></a>
+		</div>
+			
+		<div class=" gh-border-radius lv-block-index am-margin-top-sm am-scrollspy-init am-scrollspy-inview am-animation-slide-left"
+			data-am-scrollspy="{animation: 'slide-left', delay: 100}">
+			<a href="/user/assets/score.html">
+			<div class="lv-padding-vertical-sm  gh-bg lv-shadow gh-border-radius am-padding-horizontal-xs am-cf">
+				<div>
+					<img src="/img/gh-score.png" class="gh-money-img" />
+					<span class="am-text-xs lv-text-grey">兑换积分</span>
+				</div>
+				<div class="lv-text-lg lv-margin-left-index">
+					<div class="lv-text-bold lv-text-black" id="score"></div>
+				</div>
+			</div>	
+			</a>
+		</div>
+		<div
+			class=" gh-border-radius lv-block-index am-margin-top-sm am-scrollspy-init am-scrollspy-inview am-animation-slide-right"
+			data-am-scrollspy="{animation: 'slide-right', delay: 100}">
+			<a href="/user/assets/frozenScore.html">
+				<div class="lv-padding-vertical-sm gh-bg lv-shadow gh-border-radius am-padding-horizontal-xs am-cf">
+				<div class="">
+					<img src="/img/gh-frozen-score.png" class="gh-money-img" />
+					<span class="am-text-xs lv-text-grey">赠送积分</span>
+				</div>
+				<div class=" lv-text-lg lv-margin-left-index">
+					<div class="lv-text-bold lv-text-black" id="frozen-score"></div>
+				</div>
+			</div>
+			</a>
+		</div>
+	
+		<div class=" gh-border-radius lv-block-index am-margin-top-sm am-scrollspy-init am-scrollspy-inview am-animation-slide-left"
+			data-am-scrollspy="{animation: 'slide-left', delay: 100}">
+			<a href="/user/assets/amount.html">
+			<div class="lv-padding-vertical-sm gh-bg lv-shadow gh-border-radius am-padding-horizontal-xs am-cf">
+				<div class="">
+					<img src="/img/gh-balance.png" class="gh-money-img" />
+					<span class="am-text-xs lv-text-grey">余额</span>
+				</div>
+				<div class=" lv-text-lg lv-margin-left-index">
+					<div class="lv-text-bold lv-text-black" id="balance"></div>
+				</div>
+			</div>
+			</a>
+		</div>
+		<div class=" gh-border-radius lv-block-index am-margin-top-sm am-scrollspy-init am-scrollspy-inview am-animation-slide-left"
+			data-am-scrollspy="{animation: 'slide-right', delay: 100}">
+			<a href="/user/allBank.html">
+			<div class="lv-padding-vertical-sm gh-bg lv-shadow gh-border-radius am-padding-horizontal-xs am-cf">
+				<div class="">
+					<img src="/img/gh-bank.png" class="gh-money-img" />
+					<span class="am-text-xs lv-text-grey">银行卡</span>
+				</div>
+				<div class=" lv-text-lg lv-margin-left-index">
+					<div class="lv-text-bold lv-text-black" id="bank"></div>
+				</div>
+			</div>	
+			</a>
+		</div>
+		<div class=" gh-border-radius lv-block-index am-margin-top-sm am-scrollspy-init am-scrollspy-inview am-animation-slide-left"
+			data-am-scrollspy="{animation: 'slide-right', delay: 100}" id="bitcoin-block">
+			<a href="/user/assets/bitcoin.html">
+			<div class="lv-padding-vertical-sm gh-bg lv-shadow gh-border-radius am-padding-horizontal-xs am-cf">
+				<div class="">
+					<img src="/img/gh-bitcoin.png" class="gh-money-img" />
+					<span class="am-text-xs lv-text-grey">报单积分</span>
+				</div>
+				<div class=" lv-text-lg lv-margin-left-index">
+					<div class="lv-text-bold lv-text-black" id="bitcoin"></div>
+				</div>
+			</div>	
+			</a>
+		</div>
+		<div class=" gh-border-radius lv-block-index am-margin-top-sm am-scrollspy-init am-scrollspy-inview am-animation-slide-left"
+			data-am-scrollspy="{animation: 'slide-right', delay: 100}">
+			<a href="/user/assets/ticket.html">
+			<div class="am-padding-horizontal-xs lv-padding-vertical-sm  gh-bg lv-shadow gh-border-radius  am-cf">
+				<div class="">
+					<img src="/img/gh-ticket.png" class="gh-money-img" />
+					<span class="am-text-xs lv-text-grey">消费券</span>
+				</div>
+				<div class=" lv-text-lg lv-margin-left-index">
+					<div class="lv-text-bold lv-text-black" id="ticket"></div>
+				</div>
+			</div>	
+			</a>
+		</div>
+		<div class=" gh-border-radius lv-block-index am-margin-top-sm am-scrollspy-init am-scrollspy-inview am-animation-slide-left"
+			data-am-scrollspy="{animation: 'slide-right', delay: 100}">
+			<a href="/user/allAlipay.html">
+			<div class="am-padding-horizontal-xs lv-padding-vertical-sm  gh-bg lv-shadow gh-border-radius  am-cf">
+				<div class="">
+					<img src="/img/gh-ali.png" class="gh-money-img" />
+					<span class="am-text-xs lv-text-grey">支付宝</span>
+				</div>
+				<div class=" lv-text-lg lv-margin-left-index">
+					<div class="lv-text-bold lv-text-black" id="Alipay"></div>
+				</div>
+			</div>	
+			</a>
+		</div>
+	</div>
+</body>
+</html>

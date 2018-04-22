@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>规则配置</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script src="/assets/js/jquery-3.2.1.min.js"></script><script src="/assets/js/jquery.pagination.js"></script>
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/site/admin/gh-admin.js"></script>
+<script src="/site/admin/config/levelUp.js"></script>
+<link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+<link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+<link rel="stylesheet" href="/css/gh.css" />
+</head>
+<body>
+	<div class=" am-margin-top-lg ">
+		<div class=" gh-admin-main ">
+			<div class="gh-padding-title  gh-title-bottom ">
+				<span>级别规则配置</span>
+			</div>
+			<div class="gh-bg gh-padding-sm gh-border-radius" style="height: 550px">
+				<div class="am-cf" id="level-rule">
+				</div>
+				<hr/>
+				<div class="gh-margin-top-xl">调整级别</div>
+				<div class="gh-padding-title gh-margin-top-sm">
+					<span class="gh-text-sm text-right am-fl am-margin-right-xs  am-text-right" style="width:80px;line-height:32px;">升级级别:</span> <select
+						 class="gh-select-sm rule-money-select am-text-sm" id="userLevel"></select>
+				</div>
+				<div class="gh-padding-title gh-margin-top-sm">
+					<span class="gh-text-sm text-right am-fl am-margin-right-xs am-text-right" style="width:80px;line-height:32px;">升级金额:</span>
+						<input
+							class="form-control am-form-field am-fl gh-search-xl am-text-sm  "
+							id="amount" maxLength="5" type="number"  placeholder="请输入金额">
+						<span id="amountError" class="gh-error-text"></span>
+				</div>
+				<div class="gh-padding-title gh-margin-top-sm" id="directAll">
+						<span class="gh-text-sm text-right am-fl am-margin-right-xs  am-text-right" style="width:80px;line-height:32px;">上级收益:</span>
+						<input
+							class="form-control am-form-field am-fl gh-search-xl am-text-sm  "
+							id="directAmount" maxLength="5" type="number" placeholder="请输入上级收益">
+						<span id="directAmountError" class="gh-error-text"></span>
+				</div>	
+				<div style="width:390px;" class="am-margin-top-sm">
+					<a href="javascript:history.go(-1)">
+					<button  class="gh-btn-blue  am-fr am-margin-right-sm">取消</button></a>
+					<button id="level-set" class="gh-btn-blue am-fr am-margin-right-sm">确认</button>
+				</div>
+					
+			</div>
+		</div>
+	</div>
+</body>
+</html>

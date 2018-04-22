@@ -1,0 +1,1 @@
+INSERT INTO `gh`.`admin` (`id`, `create_date`, `description`, `name`, `password`, `salt`, `state`, `update_date`, `username`) VALUES ('1', '2017-11-10 15:36:26', 'lsqs', 'lsqs', '06e23b21ef99a81983df5d69cecea80c', '1BmwJAA99GE8NCluFxm7OIrb5IWLcXTD', '1', '2017-11-10 15:36:19', 'lsqs');

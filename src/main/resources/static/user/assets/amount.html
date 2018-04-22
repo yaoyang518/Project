@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>余额</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/assets/js/dropload.min.js"></script>
+<script src="/site/gh-user.js"></script>
+<script src="/site/user/assets/amount.js"></script>
+<link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+<link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+<link rel="stylesheet" href="/css/lv.css" />
+</head>
+<body>
+	<header id="header" class="am-header am-header-fixed  am-no-layout"
+		data-am-widget="header"> <a href="/user/index.html" shape="rect">
+	      <img src="/img/icon-back.png" class="lv-img-back" />
+	      <span class="lv-text-black am-text-sm">返回</span>
+    	</a></header>
+    <div class="content am-cf">
+	<div class=" am-margin-sm am-text-center lv-amount-bg gh-text-white  lv-shadow-down am-cf">
+		<div class="am-text-sm am-margin-top">账户余额(元)</div>
+		<div class="lv-text-xl lv-text-bold am-padding-top-sm" id="balance">0.00</div>
+		<div class="am-margin-top-sm am-text-sm" id="cash-rule"></div>
+	</div>
+	<div class=" am-margin-sm am-margin-bottom-xs am-text-center x-text-grey jm-text-xs am-text-danger" id="cashErr"></div>
+		<div class="am-margin-sm am-text-center" id="cash">
+			<div class="am-margin-horizontal-sm lv-cash-bg am-padding-vertical-xs gh-text-white">提现</div>
+		</div>
+		<div class="am-text-center am-text-danger am-margin-top-sm" id="weekErr"></div>
+		
+	<div class="am-margin-top-sm am-padding-sm gh-user-list">
+			<div class="lv-text-grey am-text-sm am-padding-vertical-sm">余额记录</div>
+			<div class="am-cf jm-padding-vertical-sm "></div>
+	</div>
+	  </div>	
+</body>
+</html>

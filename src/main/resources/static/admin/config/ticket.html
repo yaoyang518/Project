@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>规则配置</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="/assets/js/amazeui.min.js"></script>
+    <script src="/site/admin/gh-admin.js"></script>
+    <script src="/site/admin/config/ticket.js"></script>
+    <link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+   	<link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="/css/gh.css"/>
+</head>
+<body>
+<div class=" am-margin-top-lg ">
+    <div class=" gh-admin-main ">
+        <div class="gh-padding-title  gh-title-bottom ">
+            <span>转化率</span>
+        </div>
+        <div class="gh-bg gh-padding-sm gh-border-radius" style="height: 500px">
+            <div class=" gh-bg-gray " data-am-scrollspy="{animation: 'slide-right', delay: 100}" >
+                <div class="gh-padding-sm am-cf">
+                    <img src="/img/rule-one.png" class="gh-img am-fl" />
+                    <div class="am-fl gh-margin-left-sm">
+                        <div id="config-ticket" class="gh-text-xxl lv-text-bold"></div>
+                        <div class="gh-text-sm">当前消费券转化率</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="gh-padding-title gh-margin-top-xl lv-relative">
+                <span class="gh-text-sm">调整消费券转化率：</span>
+                <select id="ticket-select" class="gh-select-sm"></select>
+                <button id="confirm" class="gh-btn-blue gh-margin-left-sm">确认</button>
+                <span id="ticketError" class="gh-error-text"></span>
+            </div>
+            	
+               
+        </div>
+    </div>
+</div>
+</body>
+</html>

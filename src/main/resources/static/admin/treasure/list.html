@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>积分列表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="/assets/js/jquery.pagination.js"></script>
+    <script src="/assets/js/amazeui.min.js"></script>
+    <script src="/assets/js/xdate.js"></script>
+    <script src="/site/admin/gh-admin.js"></script>
+    <script src="/site/admin/treasure/list.js"></script>
+    <link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+    <link rel="stylesheet" href="/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/css/gh.css"/>
+</head>
+<body>
+<div class=" am-margin-top-lg ">
+    <div class=" gh-admin-main">
+        <div class="gh-padding-title gh-title-bottom">
+            <span>积分记录</span>
+        </div>
+        <div class="gh-border-radius gh-bg lv-relative gh-padding-bottom-lg">
+            <div class="gh-padding-sm am-cf ">
+                <div class=" gh-bg-gray gh-md-4 " data-am-scrollspy="{animation: 'slide-right', delay: 100}" >
+                    <div class="gh-padding-sm am-cf">
+                      <img src="/img/rule-one.png" class="gh-img am-fl" />
+                        <div class="am-fl gh-margin-left-sm" id="rule-first">
+                            <div><span class="gh-height-center gh-text-lg lv-text-bold" id="score-canuse">加载中</span>
+                            </div>
+                            <div class="gh-text-sm" id="rule-nav-second">兑换积分</div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" gh-bg-gray gh-md-4" data-am-scrollspy="{animation: 'slide-right', delay: 100}">
+                    <div class="gh-padding-sm am-cf">
+                        <img src="/img/rule-two.png" class="gh-img am-fl" />
+                        <div class="am-fl gh-margin-left-sm" id="rule-second">
+                            <div>
+                                <span class="gh-height-center gh-text-lg lv-text-bold" id="score-frozen">加载中</span>
+                            </div>
+                            <div class="am-text-sm" id="rule-nav-fourth">冻结积分</div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" gh-bg-gray gh-md-4" data-am-scrollspy="{animation: 'slide-right', delay: 100}">
+                    <div class="gh-padding-sm am-cf">
+                       <img src="/img/rule-three.png" class="gh-img am-fl" />
+                        <div class="am-fl gh-margin-left-sm" id="rule-third">
+                            <div>
+                                <span class="gh-height-center gh-text-lg lv-text-bold" id="score-total">加载中</span>
+                            </div>
+                            <div class="am-text-sm" id="rule-nav-six">总积分</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gh-padding-sm am-cf">
+                <div class="am-fl am-margin-top-lg am-cf am-g am-text-sm">
+                    <div class="am-fl gh-margin-right-xs" style="line-height:32px;">时间:</div>
+                    <div class="am-fl gh-margin-right-xs">
+                        <form action="" class="am-form am-form-inline">
+                            <div class="am-form-group am-form-icon">
+                                <i class="am-icon-calendar"></i>
+                                <input type="date" class="am-form-field am-input-sm" id="start" placeholder="开始日期">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="am-fl gh-margin-right-xs" style="line-height:32px;">至</div>
+                    <div class="am-fl">
+                        <form action="" class="am-form am-form-inline">
+                            <div class="am-form-group am-form-icon">
+                                <i class="am-icon-calendar"></i>
+                                <input type="date" class="am-form-field am-input-sm" id="end" placeholder="结束日期">
+                            </div>
+                        </form>
+                    </div>
+                    <button class="gh-btn-blue gh-margin-left-sm" id="search">搜索</button>
+                    <span id = "dataError" class="am-margin-left-sm am-text-danger"></span>
+                </div>
+            </div>
+            <table class="am-table am-table-hover am-text-sm">
+                <thead>
+                <tr>
+                    <th style="width: 10%" class="am-text-center">用户</th>
+                    <th style="width: 15%" class="am-text-center">来源</th>
+                    <th style="width: 10%" class="am-text-center">类型</th>
+                    <th style="width: 10%" class="am-text-center">积分</th>
+                    <th style="width: 15%" class="am-text-center">兑换积分</th>
+                    <th style="width: 10%" class="am-text-center">冻结积分</th>
+                    <th style="width: 15%" class="am-text-center">总积分</th>
+                    <th style="width: 15%" class="am-text-center">时间</th>
+                </tr>
+                </thead>
+                <tbody class="am-text-center" id="gh-scoreRecord-list">
+
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation" class="gh-position-aria">
+                <div class="pager">
+                    <span name="nav" style="cursor: pointer;">
+                        <a class="navi">
+                            <span style="color: #999">1</span>
+                        </a>
+                    </span>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+</body>
+</html>

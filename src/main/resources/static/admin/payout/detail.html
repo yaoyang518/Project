@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>提现信息</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/jquery.pagination.js"></script>
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/site/admin/gh-admin.js"></script>
+<script src="/site/admin/payout/detail.js"></script>
+<link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+<link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+<link rel="stylesheet" href="/css/gh.css" />
+</head>
+<body>
+	<div class=" am-margin-top-lg ">
+		<div class=" gh-admin-main ">
+			<div class="gh-padding-title gh-title-bottom ">
+				<span>提现信息</span>
+			</div>
+			<div class="gh-bg gh-padding-sm lv-relative gh-border-radius">
+				<p id="cashAll"></p>
+				<!-- <div class="am-cf gh-margin-top-sm">
+						<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">当前状态:</span>
+							<input class="form-control gh-search-xl am-text-sm am-form-field am-margin-right-sm am-fl"
+								id="detail" disabled type="text">
+				</div>
+						<div class="am-cf gh-margin-top-sm" id="tradeNo-all">
+							<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">&nbsp;&nbsp;&nbsp;&nbsp;流水号:</span>
+							<input class="form-control gh-search-xl am-text-sm am-form-field am-margin-right-sm am-fl"
+								id="tradeNo" name="textfield" disabled type="text">
+							
+						</div>
+						<div class="am-cf gh-margin-top-sm" id="remark-all">
+							<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">拒绝理由:</span>
+							<textarea class="gh-border-grey" style="width:300px;" id="remark" disabled></textarea>
+						</div> -->
+				<div>
+					<button class="gh-btn-blue gh-btn-sm gh-margin-left-sm record-yes cash-tag" data-toggle="modal">通过</button>
+					<button class="gh-btn-blue gh-btn-sm gh-margin-left-sm record-no cash-tag" data-toggle="modal">拒绝</button>
+						<!-- 模态框（Modal） -->
+						<div class="am-modal am-modal-alert" id="recordModal" tabindex="-1">
+							<div class="am-modal-dialog">
+								<div class="am-modal-header">
+									<div class="am-modal-hd">输入流水号</div>
+								</div>
+								<div class="am-modal-bd am-text-sm">
+									<div class="am-cf gh-margin-top-sm">
+										<span class="gh-margin-right-sm " style="line-height: 32px;">流水号:</span>
+										<input class="form-control gh-search-xl gh-select-sm"
+											id="recordlsh"  type="text">
+									</div>
+									<div class="am-cf gh-margin-top-sm">
+										<span id="recordErr" class="gh-text-red"></span>
+									</div>
+								</div>
+								<div class="am-modal-footer">
+									<div class="am-margin-vertical-sm">
+										<button class="gh-btn-blue gh-margin-left-sm" id="record-set">确定</button>
+										<button class="gh-btn-blue gh-margin-left-sm"
+											data-am-modal-close>取消</button>
+									</div>
+								</div>
+							</div>
+						</div>
+							<!-- 模态框（Modal） -->
+						<div class="am-modal am-modal-alert" id="recordModal2" tabindex="-1">
+							<div class="am-modal-dialog">
+								<div class="am-modal-header">
+									<div class="am-modal-hd">输入拒绝理由</div>
+								</div>
+								<div class="am-modal-bd am-text-sm">
+									<div class="am-cf gh-margin-top-sm">
+										<span class="gh-margin-right-sm " style="line-height: 32px;">理由:</span>
+										<input class="form-control gh-search-xl gh-select-sm"
+											id="recordjujue"  type="text">
+									</div>
+									<div class="am-cf gh-margin-top-sm">
+										<span id="jujueErr" class="gh-text-red"></span>
+									</div>
+								</div>
+								<div class="am-modal-footer">
+									<div class="am-margin-vertical-sm">
+										<button class="gh-btn-blue gh-margin-left-sm" id="jujue-set">确定</button>
+										<button class="gh-btn-blue gh-margin-left-sm"
+											data-am-modal-close>取消</button>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>			
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

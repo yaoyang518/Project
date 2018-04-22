@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>添加用户</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/site/admin/gh-admin.js"></script>
+<script src="/site/admin/user/edit.js"></script>
+<link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+<link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+<link rel="stylesheet" href="/css/gh.css" />
+</head>
+<body>
+	<div class=" am-margin-top-lg ">
+		<div class=" gh-admin-main ">
+			<div class="gh-padding-title gh-title-bottom ">
+				<span >添加用户</span>
+			</div>
+			<div class="gh-bg gh-padding-sm gh-border-radius" style="height: 500px">
+				<div class="gh-margin-left-xl am-text-sm">
+					<div class="am-cf gh-margin-top-sm">
+						<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">上级:</span>
+						<input
+							class="form-control am-form-field gh-search-xl am-text-sm  am-margin-right-sm am-fl"
+							id="parent" maxLength="5" type="text" placeholder="请输入上级ID">
+						<span id="parentError" class="gh-error-text"></span>
+					</div>
+					<div class="am-cf gh-margin-top-sm">
+						<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">名称:</span>
+						<input
+							class="form-control am-form-field gh-search-xl am-text-sm am-margin-right-sm am-fl"
+							id="username" type="text" placeholder="请输入用户昵称"> <span
+							id="usernameError" class="gh-error-text"></span>
+					</div>
+
+					<div class="am-cf gh-margin-top-sm">
+						<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">手机:</span>
+						<input
+							class="form-control am-form-field gh-search-xl am-text-sm am-margin-right-sm am-fl"
+							id="mobile" type="tel" placeholder="请输入手机号" maxlength="11">
+						<span id="mobileError" class="gh-error-text"></span>
+					</div>
+
+					<div class="am-cf gh-margin-top-sm">
+						<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">密码:</span>
+						<input
+							class="form-control am-form-field gh-search-xl am-text-sm am-margin-right-sm am-fl"
+							id="password" type="password" minlength="6" maxlength="10"
+							placeholder="请输入6-10位混合密码"> <span id="passwordError"
+							class="gh-error-text"></span>
+					</div>
+
+					<div class="gh-margin-top-sm" style="width:360px;">
+						<a href="javascript:history.go(-1);">
+							<button class="gh-btn-blue am-margin-right-sm am-fr">取消</button>
+						</a>
+						<button class="gh-btn-blue am-margin-right-sm am-fr" id="save">确定</button>
+					</div>
+					<!-- 模态框调整上级提示（Modal） -->
+					<div class="am-modal am-modal-alert" id="userModal-tips"
+						tabindex="-1">
+						<div class="am-modal-dialog">
+							<div class="am-modal-header">
+								<h4 class="am-modal-hd" id="user-title"></h4>
+							</div>
+							<div class="am-modal-footer">
+								<button class="gh-btn-blue" id="addUser-back">确定</button>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

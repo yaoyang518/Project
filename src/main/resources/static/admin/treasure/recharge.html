@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>充值</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="/assets/js/amazeui.min.js"></script>
+    <script src="/site/admin/gh-admin.js"></script>
+    <script src="/site/admin/treasure/recharge.js"></script>
+    <link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+    <link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="/css/gh.css"/>
+</head>
+<body>
+
+<div class=" am-margin-top-lg ">
+    <div class=" gh-admin-main ">
+        <div class="gh-padding-title  gh-title-bottom ">
+           <span>充值</span>
+        </div>
+        <div class="gh-bg gh-padding-sm gh-border-radius" style="height: 500px">
+            <div class="gh-margin-left-xl am-text-sm">
+                <div class="am-cf gh-margin-top-sm">
+                    <span class="gh-margin-right-sm am-fl" style="line-height: 32px;">用户名称:</span>
+                    <input class="form-control am-text-sm am-form-field gh-search-xl  am-margin-right-sm am-fl" disabled="disabled" id="username" type="text">
+                </div>
+                <div class="am-cf gh-margin-top-sm">
+                    <span class="gh-margin-right-sm am-fl" style="line-height: 32px;">手机号码:</span>
+                     <input class="form-control am-text-sm am-form-field gh-search-xl  am-margin-right-sm am-fl" disabled="disabled" id="mobile" type="text">
+                </div>
+                <div class="am-cf gh-margin-top-sm">
+                    <span class="gh-margin-right-sm am-fl" style="line-height: 32px;">充值金额:</span>
+                    <input class="form-control  am-text-sm am-form-field gh-search-xl am-margin-right-sm am-fl" value="10000"
+                           id="amount" name="textfield" type="number" min="10000" max="1000000">
+                    <span id="amountError" class="gh-error-text"></span>       
+                </div>
+                <div class="gh-margin-top-sm" style="width:378px">
+                	<a class="gh-btn-blue  am-fr" href="javascript:history.go(-1);">返回</a>
+                    <a class="gh-btn-blue am-margin-right-sm am-fr" data-toggle="modal" id="confirm">确定</a>
+                </div>
+
+                <!-- 模态框（Modal） -->
+                <div class="am-modal am-modal-alert" id="rechargeModal" tabindex="-1">
+                        <div class="am-modal-dialog">
+                            <div class="am-modal-header">
+                                <h4 class="am-modal-hd" id="myModalLabel">
+                                    		提示
+                                </h4>
+                            </div>
+                            <div class="am-modal-body lv-padding-0 text-center">
+                                <div class="gh-text-sm lv-text-grey gh-margin-top-sm">
+                                   		 是否为用户<span class="gh-text-lg lv-text-blue" id="rechargeMobile">加载中</span>充值
+                                </div>
+                                <div class="gh-text-red  gh-text-lg gh-margin-top-sm" id="rechargeAmount">加载中</div>
+                            </div>
+                            <div class="am-modal-footer gh-margin-top-sm">
+                                <button class="gh-btn-blue gh-margin-left-sm" id="recharge">确定</button>
+                                <button class="gh-btn-blue gh-margin-left-sm" data-am-modal-close >取消</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 模态框充值提示（Modal） -->
+							<div class="am-modal am-modal-alert" id="rechargrModal-tips"
+								tabindex="-1">
+								<div class="am-modal-dialog">
+									<div class="modal-header">
+										<div class="am-modal-hd" id="recharge-title"></div>
+									</div>
+									<div class="am-modal-footer">
+										<div class="am-margin-vertical-sm">
+											<button class="gh-btn-blue gh-margin-left-sm"
+												id="success-recharge" onclick="javascript:history.go(-1)">确定</button>
+										</div>
+									</div>
+								</div>
+							</div>		
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

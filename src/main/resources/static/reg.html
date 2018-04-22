@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+    <title>注册</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="site/reg.js"></script>
+    <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="css/lv.css"/>
+</head>
+<body>
+<header id="header" class="am-header am-header-fixed  am-no-layout" data-am-widget="header">
+  <div class="am-header-left am-header-nav">
+    <a href="javascript:history.go(-1);" shape="rect">
+      <img src="img/icon-back.png" class="lv-img-back" />
+      <span class="lv-text-black am-text-sm">返回</span>
+    </a>
+  </div>
+</header>
+<div class=" am-cf lv-margin-top-four am-padding-top-lg">
+	<div class="am-margin-horizontal-lg lv-text-xl lv-text-bold">注册账号</div>
+  <div class=" am-margin-horizontal-lg lv-margin-top-xxl">
+    <form method="post" class="am-form">
+      <div class="lv-relative">
+      <label for="phone" class="lv-text-grey lv-login-lab1">手机号码：</label>
+      <input type="tel" maxlength="11"  id="lv-sign-phone" value="" class=" lv-text-lg  lv-text-bold lv-border-grey lv-login-ipt1 lv-padding-0">
+      <div class="lv-error-one lv-text-red  am-text-xs"></div>
+      </div>
+      <br>
+      <div class="lv-relative">
+      	 <label for="password" class="lv-text-grey lv-login-lab2">密码:</label>
+	     <input type="password" password="1" maxlength="10" id="lv-sign-password"  class="lv-text-lg  lv-text-bold lv-border-grey lv-login-ipt2 lv-padding-0">
+		 <div class="lv-password-error lv-text-red am-text-xs"></div>
+      </div>
+      <br>
+      <div class="lv-relative">
+      	 <label for="yzm" class="lv-text-grey lv-login-lab3">验证码:</label>
+	     <input type="tel" password="1"  name="" id="lv-sign-yzm" value="" class="lv-text-lg  lv-text-bold lv-border-grey lv-login-ipt3 lv-padding-0">
+	     <span data-show="1" class="x-text-gray eyes lv-eye">
+			<img src="/reg/kaptcha" class="lv-reg-yzm" />
+		 </span>
+		 <div class="lv-error-four lv-text-red am-text-xs"></div>
+      </div>
+      <br>
+      <div class="lv-relative">
+      <label for="id" class="lv-text-grey lv-login-lab0 ">上级ID:</label>
+      <input type="tel" maxlength="6" id="lv-sign-id" value="" class=" lv-text-lg  lv-text-bold lv-border-grey lv-login-ipt0 lv-padding-0">
+      <div class="lv-error-zero lv-text-red  am-text-xs"></div>
+      </div>
+      <br>
+      <div class="am-cf">
+        <input type="button"  name="" value="注册" id="lv-sign" disabled="disabled" class=" am-btn am-u-sm-12 lv-bg-grey gh-border-0 lv-padding-one lv-text-default am-btn-primary am-btn-sm am-fl">
+      </div>
+    </form>
+  </div>
+</div>
+<div class="am-fr am-margin-top-lg ">
+	<div class="am-margin-horizontal-lg">
+		<div class="am-fl">
+    		<span class="lv-text-grey am-text-sm">已有账号？</span>
+    		<a href="login.html" class="lv-text-green am-text-sm">马上登录</a>
+    	</div>
+    	<div class="am-fr am-hide">
+    		<a href="" class="lv-text-blue am-text-sm">注册协议</a>
+    	</div>
+	</div>
+    	
+    </div>
+
+    
+</body>
+</html>

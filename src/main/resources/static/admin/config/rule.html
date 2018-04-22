@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>规则配置</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script src="/assets/js/jquery-3.2.1.min.js"></script><script src="/assets/js/jquery.pagination.js"></script>
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/site/admin/gh-admin.js"></script>
+<script src="/site/admin/config/rule.js"></script>
+<link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+	<link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+<link rel="stylesheet" href="/css/gh.css" />
+</head>
+<body>
+	<div class=" am-margin-top-lg ">
+		<div class=" gh-admin-main ">
+			<div class="gh-padding-title  gh-title-bottom ">
+				<span>规则配置</span>
+			</div>
+			<div class="gh-bg gh-padding-sm am-text-sm gh-border-radius" style="height: 580px">
+				<div class="am-cf">
+					<div class=" gh-bg-gray am-fl gh-margin-right-sm gh-md-4 " data-am-scrollspy="{animation: 'slide-right', delay: 100}" >
+						<div class="gh-padding-sm am-cf">
+							<img src="/img/rule-one.png" class="gh-img am-fl" />
+							<div class="am-fl gh-margin-left-sm" id="rule-first">
+								<div><span  class="gh-height-center gh-text-xxl lv-text-bold" id="rule-nav-first"></span>倍积分</div>
+								<div class="gh-text-sm" id="rule-nav-second"></div>
+							</div>
+						</div>
+					</div>
+					<div class=" gh-bg-gray am-fl gh-margin-right-sm gh-md-4" data-am-scrollspy="{animation: 'slide-right', delay: 100}" >
+						<div class="gh-padding-sm am-cf">
+							<img src="/img/rule-two.png" class="gh-img am-fl" />
+							<div class="am-fl gh-margin-left-sm"  id="rule-second">
+								<div><span class="gh-height-center gh-text-xxl lv-text-bold" id="rule-nav-third"></span>倍积分</div>
+								<div class="gh-text-sm" id="rule-nav-fourth"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="gh-margin-top-xl">调整积分返还率</div>
+				<div class="gh-padding-title gh-margin-top-sm">
+					<span class="gh-text-sm text-right" style="width:112px;display:inline-block">首档金额：</span> <select
+						 class="gh-select-sm rule-money-select" id="rule-first-level"></select>
+				</div>
+				<div class="gh-padding-title gh-margin-top-sm">
+					<span class="gh-text-sm">首档积分返还率：</span> <select
+						 class="gh-select-sm rule-select" id="rule-first-multiple"></select>
+				</div>
+				<div class="gh-padding-title gh-margin-top-sm">
+					<span class="gh-text-sm">二档积分返还率：</span> <select
+						 class="gh-select-sm rule-select" id="rule-second-multiple"></select>
+				</div>
+				<div style="width:420px;">
+					<button id="rule-percent-set" class="gh-btn-blue  am-fr gh-margin-top-sm">确认</button>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

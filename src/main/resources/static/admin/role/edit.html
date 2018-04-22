@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>编辑角色</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="/assets/js/amazeui.min.js"></script>
+    <script src="/site/admin/gh-admin.js"></script>
+    <script src="/site/admin/role/edit.js"></script>
+    <link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+    <link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="/css/gh.css"/>
+</head>
+<body>
+<div class=" am-margin-top-lg ">
+    <div class=" gh-admin-main ">
+        <div class="gh-padding-title  gh-title-bottom ">
+            <span id="action">添加角色</span>
+        </div>
+        <div class="gh-bg gh-padding-sm am-text-sm gh-border-radius">
+            <div class="gh-margin-left-xl">
+                <div class="am-cf gh-margin-top-sm">
+                    <span class="gh-margin-right-sm am-fl" style="line-height: 32px;">名称:</span>
+                    <input class="form-control am-form-field gh-search-xl  am-margin-right-sm am-fl"
+                           id="role"  type="text">
+                           <span id="roleError" class="gh-error-text"></span>
+                </div>
+                <div class="am-cf gh-margin-top-sm">
+                    <span class="gh-margin-right-sm am-fl" style="line-height: 32px;">备注:</span>
+                    <textarea class="gh-textarea" rows="5" id="description"></textarea>
+                </div>
+                <div class="am-cf gh-margin-top-sm">
+						<span class="gh-margin-right-sm am-fl"
+                              style="line-height: 38px;">权限:</span>
+                    <div class="gh-margin-top-xxs" id="permission-list" style="width:360px;"></div>
+                </div>
+                <div class="gh-margin-top-sm am-cf" style="width:350px;">
+                 	<a href="javascript:history.go(-1);">
+                    	<button  class="gh-btn-blue gm-margin-right-sm am-fr">取消</button>
+                    </a>
+                    <a  id="save">
+                    	<button class="gh-btn-blue gh-margin-right-sm am-fr">确定</button>
+                    </a>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

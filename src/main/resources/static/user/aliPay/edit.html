@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>银行卡</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/assets/js/dropload.min.js"></script>
+<script src="/site/gh-user.js"></script>
+<script src="/site/user/aliPay/edit.js"></script>
+<link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+<link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+<link rel="stylesheet" href="/css/lv.css" />
+</head>
+<body>
+	<header id="header" class="am-header am-header-fixed  am-no-layout"
+		data-am-widget="header">
+		<a href="javascript:history.go(-1);" shape="rect"> <img
+			src="/img/icon-back.png" class="lv-img-back" /> <span
+			class="lv-text-black am-text-sm">返回</span>
+		</a>
+	</header>
+	<div class="jm-bg am-padding-sm">
+		<div class="am-text-center am-margin-top-sm  jm-text-xs"
+			style="color: #999">请准确输入支付宝信息</div>
+		<div class=" am-margin-top am-padding-left-sm am-cf">
+			<div class="am-fr " style="width: 70%">
+				<input style="border: none;" placeholder="请输入姓名" id="userName"
+					class="form-control am-form-field am-padding-left-sm am-margin-bottom-xs"
+					type="text">
+				<div class="am-text-center am-text-danger" id="userNameErr"></div>
+			</div>
+			<label class="am-fl  am-form-label am-margin-top-xs" for="code">收款姓名</label>
+		</div>
+		<hr class="lv-margin-0">
+		<div class=" am-margin-top am-padding-left-sm am-cf">
+			<div class="am-fr " style="width: 70%">
+				<input style="border: none;" placeholder="请输入支付宝账号" id="cardNum"
+					class="form-control am-form-field am-padding-left-sm am-margin-bottom-xs"
+					type="text">
+				<div class="am-text-center am-text-danger" id="cardNumErr"></div>
+			</div>
+			<label class="am-fl  am-form-label am-margin-top-xs" for="code">支付宝号</label>
+		</div>
+		<hr class="lv-margin-0">
+	</div>
+	<div class="am-u-sm-12" id="check-detail">
+		<div class="am-form-group">
+			<label class="am-checkbox-inline">
+        		<input type="checkbox" value="默认" id="box"> 设为默认支付宝
+     		 </label>
+		</div>
+	</div>
+	<div class="am-form-group am-margin-horizontal">
+		<input value="保存" class="am-btn am-btn-warning am-btn-block jm-radius"
+			id="bank-set" type="submit">
+	</div>
+	<div class="am-form-group am-margin-horizontal">
+		<input value="删除"
+			class="am-btn lv-bg-gray gh-text-white am-btn-block jm-radius am-hide"
+			id="bank-delete" type="submit">
+	</div>
+</body>
+</html>

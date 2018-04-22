@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>银行卡</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/assets/js/dropload.min.js"></script>
+<script src="/site/gh-user.js"></script>
+<script src="/site/user/cash.js"></script>
+<link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+<link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+<link rel="stylesheet" href="/css/lv.css" />
+</head>
+<body>
+	<header id="header" class="am-header am-header-fixed  am-no-layout"
+		data-am-widget="header">
+		<a href="/user/assets/amount.html" shape="rect"> <img
+			src="/img/icon-back.png" class="lv-img-back" /> <span
+			class="lv-text-black am-text-sm">返回</span>
+		</a>
+	</header>
+	<div class="am-tabs am-tabs-d2 am-no-layout" data-am-widget="tabs">
+		<ul style="background-color: #fff; overflow: hidden;"
+			class="am-tabs-nav am-cf am-text-sm">
+			<li class="am-active cash-header"><a href="[data-tab-panel-0]">银行卡
+			</a></li>
+			<li class="cash-header"><a style="line-height: 4rem !important;"
+				href="[data-tab-panel-1]">支付宝
+			</a></li>
+		</ul>
+		<div style="border: 0px; touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+			class="am-tabs-bd jm-bg">
+			<div class="am-tab-panel am-active am-in">
+				<div  id="Bank-all">
+				<div>
+					<a href="/user/selectBank.html">
+						<div class=" am-text-center lv-bank-bg gh-text-white am-cf lv-relative">
+							<div class="lv-cash-bank" id="bank"></div>
+							<div class="x-text-gray lv-cash-cardNum" id="cardNum"></div>
+						</div>
+					</a>
+				</div>
+				<div class="am-cf am-padding-horizontal-sm">
+					<div class="gh-bottom-border am-text-lg am-margin-vertical-sm">
+						<input
+							onkeyup="this.value=this.value.replace(/[^\d\.]/gi,&quot;&quot;)"
+							style="width: 20rem; border: none !important;" placeholder="提现金额"
+							id="cashAmount" class="form-control" name="textfield" type="tel">
+					</div>
+					<div class="am-padding-vertical-xs am-fl  x-text-grey am-text-xs"
+						id="cash-rule1"></div>
+					<div class="am-padding-vertical-xs am-fr  x-text-grey am-text-xs"
+						id="cash-rule2"></div>
+				</div>
+				<div class="am-margin-top-sm">
+					<div class="am-padding-horizontal-sm">
+						<a
+							class="am-btn am-btn-block  lv-bg-green gh-border-radius gh-text-white"
+							id="cash-out">确认提现</a>
+					</div>
+					<div
+						class=" am-margin-sm am-margin-bottom-xs am-text-left x-text-grey jm-text-xs am-text-danger"
+						id="cashErr"></div>
+				</div>
+				
+				</div>
+				<div class="am-text-center am-margin-top-lg" id="bankNull">
+					<p>您还未添加银行卡</p>
+					<a href="/user/payaccount/edit.html" class="am-btn am-btn-block am-margin-top-xl  lv-bg-green gh-border-radius gh-text-white">马上添加</a>
+				</div>
+
+			</div>
+
+			<div class="am-tab-panel jm-bottom-border">
+				<div id="Alipay-all">
+				<div>
+					<a href="/user/selectAlipay.html">
+						<div class=" am-text-center lv-alipay-bg gh-text-white am-cf lv-relative">
+							<div class="x-text-gray lv-cash-ali" id="AliNum"></div>
+						</div>
+					</a>
+				</div>
+				<div class="am-cf am-padding-horizontal-sm">
+					<div class="gh-bottom-border am-text-lg am-margin-vertical-sm">
+						<input
+							onkeyup="this.value=this.value.replace(/[^\d\.]/gi,&quot;&quot;)"
+							style="width: 20rem; border: none !important;" placeholder="提现金额"
+							id="AliAmount" class="form-control" name="textfield" type="tel">
+					</div>
+					<div class="am-padding-vertical-xs am-fl  x-text-grey am-text-xs"
+						id="Ali-rule1"></div>
+					<div class="am-padding-vertical-xs am-fr  x-text-grey am-text-xs"
+						id="Ali-rule2"></div>
+				</div>
+				<div class="am-margin-top-sm">
+					<div class="am-padding-horizontal-sm">
+						<a
+							class="am-btn am-btn-block  lv-bg-green gh-border-radius gh-text-white"
+							id="Ali-out">确认提现</a>
+					</div>
+					<div
+						class=" am-margin-sm am-margin-bottom-xs am-text-left x-text-grey jm-text-xs am-text-danger"
+						id="AliErr"></div>
+				</div>
+				</div>
+				<div class="am-text-center am-margin-top-lg" id="alipayNull">
+					<p>您还未添加支付宝</p>
+					<a href="/user/alipay/edit.html" class="am-btn am-btn-block am-margin-top-xl  lv-bg-green gh-border-radius gh-text-white">马上添加</a>
+				</div>
+				
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

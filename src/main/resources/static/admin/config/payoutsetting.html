@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>规则配置</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script src="/assets/js/jquery-3.2.1.min.js"></script><script src="/assets/js/jquery.pagination.js"></script>
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/site/admin/gh-admin.js"></script>
+<script src="/site/admin/config/payoutsetting.js"></script>
+<link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+<link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+<link rel="stylesheet" href="/css/gh.css" />
+</head>
+<body>
+	<div class=" am-margin-top-lg ">
+		<div class=" gh-admin-main ">
+			<div class="gh-padding-title  gh-title-bottom ">
+				<span>提现金额设置</span>
+			</div>
+			<div class="gh-bg gh-padding-sm gh-border-radius" style="height: 550px">
+				<div class="am-cf" id="payout-rule">
+				</div>
+				<hr/>
+				<div class="am-cf">
+					<div class="am-fl am-margin-horizontal-sm am-text-right"
+							style="line-height: 32px">最低提现金额:</div>
+					<input type="text" class="am-form-field am-text-sm  gh-search form-control am-fl" id="payoutAmount">
+					<span id="payoutError" class="am-text-xs am-margin-left-sm gh-text-red"></span>
+				</div>
+				<div style="width:334px;" class="am-margin-top-sm">
+					<a href="javascript:history.go(-1)">
+					<button  class="gh-btn-blue  am-fr am-margin-right-sm">取消</button></a>
+					<button id="level-set" class="gh-btn-blue am-fr am-margin-right-sm">确认</button>
+				</div>
+					
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>转赠报单积分</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/assets/js/dropload.min.js"></script>
+<script src="/site/gh-user.js"></script>
+<script src="/site/user/payment/bitcoin.js"></script>
+<link rel="alternate icon" type="image/png" href="/assets/i/favicon.png">
+<link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+<link rel="stylesheet" href="/css/lv.css" />
+</head>
+<body>
+	<header id="header" class="am-header am-header-fixed  am-no-layout"
+		data-am-widget="header">
+		<a href="/user/assets/bitcoin.html" shape="rect"> <img
+			src="/img/icon-back.png" class="lv-img-back" /> <span
+			class="lv-text-black am-text-sm">返回</span>
+		</a>
+	</header>
+	<div class=" am-padding-sm">
+		<div class=" am-margin-top am-padding-left-sm am-cf">
+			<div class="am-fr am-u-sm-9">
+				<input style="border: none; background-color: none !important;"
+					placeholder="请输入转赠用户ID" id="userid"
+					class="form-control am-form-field am-padding-left-sm am-margin-bottom-xs"
+					 type="text">
+			</div>
+			<label class="am-fl  am-form-label am-margin-top-xs" for="code">转赠ID</label>
+		</div>
+		<hr class="lv-margin-0">
+		<div class="am-padding-horizontal-sm   am-text-left x-text-grey jm-text-xs" id="giveUser" style="height:30px;"></div>
+		<div class=" am-margin-top am-padding-left-sm am-cf">
+			<div class="am-fr am-u-sm-9">
+				<input style="border: none; background-color: none !important;"
+					placeholder="请输入转赠数量" id="amount"
+					class="form-control am-form-field am-padding-left-sm am-margin-bottom-xs"
+					 type="text">
+			</div>
+			<label class="am-fl  am-form-label am-margin-top-xs" for="code">转赠数量</label>
+		</div>
+		<hr class="lv-margin-0">
+		<div class="am-padding-horizontal-sm   am-text-left x-text-grey jm-text-xs am-text-danger" id="amountErr"></div>
+	</div>
+	<div class="am-margin-top-xl">
+		<div class="am-padding-horizontal-sm">
+			<a class="am-btn am-btn-block  lv-bg-green gh-border-radius gh-text-white" disabled id="give">确定</a>
+		</div>
+		
+	</div>
+
+</body>
+		</html>
