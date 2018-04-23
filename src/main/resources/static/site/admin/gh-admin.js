@@ -175,6 +175,23 @@ function initHeader(tab) {
                                     '<li><a href="/admin/payout/records.html">提现申请</a></li>' +
                                 '</ul>' +
                             '</li>' +
+                             '<li class="am-dropdown nav-tab" data-am-dropdown>';
+                            if(tab == "school"){
+                                header= header +
+                                    '<a class="am-dropdown-toggle gh-text-black" data-am-dropdown-toggle>' +
+                                    '<img src="/img/admin-setting-black.png" /><span>学校</span>' +
+                                    '</a>';
+                            }else{
+                                header= header +
+                                    '<a class="am-dropdown-toggle" data-am-dropdown-toggle>' +
+                                    '<img src="/img/admin-setting-grey.png" /><span>学校</span>' +
+                                    '</a>';
+                            }
+                            header = header  +
+                                '<ul class="am-dropdown-content">' +
+                                '<li><a href="/admin/school/list.html">学校列表</a></li>' +
+                                '</ul>' +
+                                '</li>' +
                             '<li class="am-dropdown nav-tab" data-am-dropdown>';
                              if(tab == "config"){
                             	 header = header  +
