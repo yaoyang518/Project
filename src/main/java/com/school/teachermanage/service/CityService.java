@@ -1,5 +1,6 @@
 package com.school.teachermanage.service;
 
+import com.school.teachermanage.entity.City;
 import com.school.teachermanage.repository.CityReposity;
 import org.springframework.stereotype.Service;
 
@@ -15,4 +16,6 @@ import javax.annotation.Resource;
 public class CityService {
     @Resource
     private CityReposity cityReposity;
+
+    public City save(City city){return cityReposity.save(city);}
 }

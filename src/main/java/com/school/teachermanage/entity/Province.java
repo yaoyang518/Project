@@ -17,6 +17,7 @@ public class Province {
     @GeneratedValue
     private Long id;
     private String name;
+    private String letter;
 
     public Long getId() {
         return id;
@@ -33,4 +34,8 @@ public class Province {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getLetter() { return letter; }
+
+    public void setLetter(String letter) { this.letter = letter; }
 }

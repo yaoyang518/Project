@@ -1,5 +1,6 @@
 package com.school.teachermanage.service;
 
+import com.school.teachermanage.entity.District;
 import com.school.teachermanage.repository.DistrictReposity;
 import org.springframework.stereotype.Service;
 
@@ -15,4 +16,6 @@ import javax.annotation.Resource;
 public class DistrictService {
     @Resource
     private DistrictReposity districtReposity;
+
+    public District save(District district){ return districtReposity.save(district); }
 }

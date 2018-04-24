@@ -15,6 +15,7 @@ public class City {
     @GeneratedValue
     private Long id;
     private String name;
+    private String letter;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "provinceId")
@@ -43,4 +44,8 @@ public class City {
     public void setProvince(Province province) {
         this.province = province;
     }
+
+    public String getLetter() { return letter; }
+
+    public void setLetter(String letter) { this.letter = letter; }
 }

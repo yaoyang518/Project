@@ -18,6 +18,7 @@ public class District {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cityId")
     private City city;
+    private String letter;
 
     public Long getId() {
         return id;
@@ -42,4 +43,8 @@ public class District {
     public void setCity(City city) {
         this.city = city;
     }
+
+    public String getLetter() { return letter; }
+
+    public void setLetter(String letter) { this.letter = letter; }
 }
