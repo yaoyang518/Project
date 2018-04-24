@@ -16,12 +16,10 @@ import com.school.teachermanage.util.PinYinUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.util.ResourceUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * @author yaoyang
@@ -77,5 +75,12 @@ public class AddressController {
         DataResult result = new DataResult();
         result.setSuccessMsg(MsgConstants.OPT_SUCCESS);
         return result;
+    }
+
+    @GetMapping("/listProvince")
+    @ApiOperation(value = "获取所以省份")
+    public DataResult listProvince(@RequestHeader String token){
+        DataResult result = new DataResult();
+        return provinceService.findAllProvinces(result);
     }
 }

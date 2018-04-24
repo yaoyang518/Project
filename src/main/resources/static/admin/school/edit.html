@@ -25,37 +25,27 @@
 			<div class="gh-bg gh-padding-sm gh-border-radius" style="height: 500px">
 				<div class="gh-margin-left-xl am-text-sm">
 					<div class="am-cf gh-margin-top-sm">
-						<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">上级:</span>
-						<input
-							class="form-control am-form-field gh-search-xl am-text-sm  am-margin-right-sm am-fl"
-							id="parent" maxLength="5" type="text" placeholder="请输入上级ID">
-						<span id="parentError" class="gh-error-text"></span>
+						<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">选择地址:</span>
+						<div>
+							<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">省:</span>
+							<select id="province-select" class="gh-select-sm"></select>
+						</div>
+						<div>
+							<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">市:</span>
+							<select id="city-select" class="gh-select-sm"></select>
+						</div>
+						<div>
+							<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">县:</span>
+							<select id="district-select" class="gh-select-sm"></select>
+						</div>
 					</div>
 					<div class="am-cf gh-margin-top-sm">
-						<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">名称:</span>
+						<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">学校名称:</span>
 						<input
 							class="form-control am-form-field gh-search-xl am-text-sm am-margin-right-sm am-fl"
 							id="username" type="text" placeholder="请输入用户昵称"> <span
 							id="usernameError" class="gh-error-text"></span>
 					</div>
-
-					<div class="am-cf gh-margin-top-sm">
-						<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">手机:</span>
-						<input
-							class="form-control am-form-field gh-search-xl am-text-sm am-margin-right-sm am-fl"
-							id="mobile" type="tel" placeholder="请输入手机号" maxlength="11">
-						<span id="mobileError" class="gh-error-text"></span>
-					</div>
-
-					<div class="am-cf gh-margin-top-sm">
-						<span class="gh-margin-right-sm am-fl" style="line-height: 32px;">密码:</span>
-						<input
-							class="form-control am-form-field gh-search-xl am-text-sm am-margin-right-sm am-fl"
-							id="password" type="password" minlength="6" maxlength="10"
-							placeholder="请输入6-10位混合密码"> <span id="passwordError"
-							class="gh-error-text"></span>
-					</div>
-
 					<div class="gh-margin-top-sm" style="width:360px;">
 						<a href="javascript:history.go(-1);">
 							<button class="gh-btn-blue am-margin-right-sm am-fr">取消</button>
