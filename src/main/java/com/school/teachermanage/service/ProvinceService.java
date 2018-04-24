@@ -24,6 +24,8 @@ public class ProvinceService {
 
     public Province save(Province province){ return provinceReposity.save(province); }
 
+    public long getCount(){ return provinceReposity.count();}
+
     public DataResult findAllProvinces(DataResult result){
         Iterable<Province> provinceList = provinceReposity.findAll();
         JSONArray array = generateProvinceJsonArray(provinceList);
