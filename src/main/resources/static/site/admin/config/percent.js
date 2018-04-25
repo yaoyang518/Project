@@ -13,6 +13,7 @@ $(function () {
                 request.setRequestHeader("token", token);
             },
             success: function (result) {
+                console.log(result);
                 var data = result.data;
                 switch (data.code) {
                     case "0000":

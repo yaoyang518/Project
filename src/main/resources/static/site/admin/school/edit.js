@@ -4,7 +4,97 @@ $(function() {
 	var passwordFlag = false;
 	var parentFlag = false;
 	initHeader('school');
-	$("#parent").on('input',function() {
+    loadAddress();
+    loadCity(1);
+    loadDistrict(1);
+    change();
+    function loadAddress() {
+        showLoading();
+        $.ajax({
+            type : "GET",
+            url : "/addressApi/listProvince",
+            dataType : "JSON",
+            beforeSend : function(request) {
+                request.setRequestHeader("token", token);
+            },
+            data : {},
+            success : function(result) {
+                console.log(result);
+                var data = result.data;
+				createProvince(data.provinces);
+                hideLoading();
+            }
+        })
+    }
+    function loadCity(item) {
+        showLoading();
+        $.ajax({
+            type : "GET",
+            url : "/addressApi/listCity",
+            dataType : "JSON",
+            beforeSend : function(request) {
+                request.setRequestHeader("token", token);
+            },
+            data : {provinceId:item},
+            success : function(result) {
+                console.log(result);
+                var data = result.data;
+                createCity(data.cities);
+                hideLoading();
+            }
+        })
+    }
+    function loadDistrict(item) {
+        showLoading();
+        $.ajax({
+            type : "GET",
+            url : "/addressApi/listDistrict",
+            dataType : "JSON",
+            beforeSend : function(request) {
+                request.setRequestHeader("token", token);
+            },
+            data : {cityId:item},
+            success : function(result) {
+                console.log(result);
+                var data = result.data;
+                createArea(data.districts);
+                hideLoading();
+            }
+        })
+    }
+    function createProvince(item) {
+        $("#province-selec").empty();
+        for (var i = 0; i < item.length; i++) {
+            var obj = item[i];
+			$("#province-select").append('<option value="' + obj.id + '">' + obj.name + '</option>');
+        }
+    }
+    function createCity(item) {
+        $("#city-select").empty();
+        for (var i = 0; i < item.length; i++) {
+            var obj = item[i];
+            $("#city-select").append('<option value="' + obj.id + '">' + obj.name + '</option>');
+        }
+    }
+    function createArea(item) {
+        $("#district-select").empty();
+        for (var i = 0; i < item.length; i++) {
+            var obj = item[i];
+            $("#district-select").append('<option value="' + obj.id + '">' + obj.name + '</option>');
+        }
+    }
+    function change() {
+        $("#province-select").change(function () {
+            var province = $("#province-select").val();
+            console.log(province);
+            loadCity(province)
+        });
+        $("#city-select").change(function () {
+            var city = $("#city-select").val();
+            loadDistrict(city)
+        });
+    }
+	/*$("#parent").on('input',function() {
 		var parent = $("#parent").val();
 		if (parent != "") {
 			$.ajax({
@@ -109,7 +199,7 @@ $(function() {
 	
 	$("#addUser-back").click(function(){
 		location.replace("/admin/user/list.html")
-	})
+	})*/
 	
 	function addUser(params) {
 		showLoading("玩命创建用户中...");
