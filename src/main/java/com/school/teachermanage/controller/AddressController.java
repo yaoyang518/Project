@@ -87,7 +87,7 @@ public class AddressController {
     }
 
     @GetMapping("/listProvince")
-    @ApiOperation(value = "获取所以省份")
+    @ApiOperation(value = "获取所有省份")
     @ApiImplicitParams(@ApiImplicitParam(name="token", value="请求token", required = true, paramType = "header", dataType = "String"))
     public DataResult listProvince(@RequestHeader String token){
         DataResult result = new DataResult();
@@ -101,6 +101,15 @@ public class AddressController {
     public DataResult listCity(@RequestHeader String token, @RequestParam Long provinceId){
         DataResult result = new DataResult();
         return cityService.findCitiesByProvinceId(provinceId, result);
+    }
+
+    @GetMapping("/listDistrict")
+    @ApiOperation(value = "根据城市Id查县区")
+    @ApiImplicitParams({@ApiImplicitParam(name="cityId",value = "市Id",required = true,paramType = "query",dataType = "Long"),
+            @ApiImplicitParam(name="token",value = "请求token",required = true,paramType = "header",dataType = "String")})
+    public DataResult listDistrict(@RequestHeader String token, @RequestParam Long cityId){
+        DataResult result = new DataResult();
+        return districtService.findDistrictsByCityId(cityId,result);
     }
 
 }
