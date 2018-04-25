@@ -77,6 +77,7 @@ public enum ErrorCode {
     ALIPAY_NUMBER_NO_EXIST("0064","账户不能为空"),
     ALIPAY_NAME_NO_EXIST("0065","账户名不能为空"),
     USER_NOT_ALIPAY("0066","用户为绑定支付宝账户"),
+    ILLEGAL_PARAMETER("0067","非法参数"),
     UNKNOW_ERROR("9999", "未知错误");
     private String code;
     private String name;

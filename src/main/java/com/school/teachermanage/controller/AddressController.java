@@ -105,8 +105,8 @@ public class AddressController {
 
     @GetMapping("/listDistrict")
     @ApiOperation(value = "根据城市Id查县区")
-    @ApiImplicitParams({@ApiImplicitParam(name="cityId",value = "市Id",required = true,paramType = "query",dataType = "Long"),
-            @ApiImplicitParam(name="token",value = "请求token",required = true,paramType = "header",dataType = "String")})
+    @ApiImplicitParams({@ApiImplicitParam(name="token",value = "请求token",required = true,paramType = "header",dataType = "String"),
+            @ApiImplicitParam(name="cityId",value = "市Id",required = true,paramType = "query",dataType = "Long")})
     public DataResult listDistrict(@RequestHeader String token, @RequestParam Long cityId){
         DataResult result = new DataResult();
         return districtService.findDistrictsByCityId(cityId,result);

@@ -101,6 +101,15 @@ public class StringUtil {
         return false;
     }
 
+    public static boolean isNullOrEmpty(final String... value) {
+        for (String string : value) {
+            if (isEmpty(string)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     /**
      * 根据Unicode编码完美的判断中文汉字和符号
