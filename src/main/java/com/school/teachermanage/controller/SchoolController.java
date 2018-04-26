@@ -14,6 +14,8 @@ import net.sf.json.JSONObject;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
+
 /**
  * @author yaoyang
  * @Description:
@@ -24,12 +26,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/schoolApi")
 public class SchoolController {
 
-    public SchoolService schoolService;
+    @Resource
+    private SchoolService schoolService;
 
     @PostMapping("/createSchool")
     @ApiOperation(value="创建学校",notes="结构为{districtId:11,name=镇海中学}")
     @ApiImplicitParams({@ApiImplicitParam(name="token", value = "",required = true,paramType = "header",dataType = "String"),
-        @ApiImplicitParam(name="school",value = "学校的参数",required = true,paramType = "body",dataType = "School")})
+        @ApiImplicitParam(name="school",value = "学校的参数",required = true,paramType = "body",dataType = "JSONObject")})
     public DataResult createSchool(@RequestHeader String token , @RequestBody JSONObject school){
         DataResult result = new DataResult();
         return schoolService.createSchool(school,result);

@@ -9,6 +9,8 @@ import com.school.teachermanage.repository.DistrictReposity;
 import com.school.teachermanage.repository.SchoolReposity;
 import com.school.teachermanage.util.StringUtil;
 import net.sf.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -20,6 +22,7 @@ import javax.annotation.Resource;
  */
 @Service
 public class SchoolService {
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Resource
     private DistrictReposity districtReposity;
@@ -30,6 +33,7 @@ public class SchoolService {
 
     public DataResult  createSchool(JSONObject json,DataResult result){
 
+        logger.info(json.toString());
         Long districtId = json.getLong("districtId");
         String name = json.getString("name");
         if(StringUtil.isNullOrEmpty(name)){
