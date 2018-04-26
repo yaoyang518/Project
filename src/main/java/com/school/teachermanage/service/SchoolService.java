@@ -7,11 +7,15 @@ import com.school.teachermanage.enumeration.ErrorCode;
 import com.school.teachermanage.repository.AddressReposity;
 import com.school.teachermanage.repository.DistrictReposity;
 import com.school.teachermanage.repository.SchoolReposity;
+import com.school.teachermanage.util.CommonUtil;
+import com.school.teachermanage.util.QueryUtil;
 import com.school.teachermanage.util.StringUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -59,11 +63,14 @@ public class SchoolService {
         return result;
     }
 
-    public DataResult getAllSchool(DataResult result){
-        Iterable<School> schoolList = schoolReposity.findAll();
+    public DataResult getAllSchool(int page,int size,DataResult result){
+        PageRequest pageRequest = QueryUtil.buildPageRequest(page,size,"id",true);
+        Page<School> schoolPage = schoolReposity.findSchools(pageRequest);
+        Iterable<School> schoolList = schoolPage.getContent();
         JSONArray array = generateSchoolJsonArray(schoolList);
         JSONObject data = result.getData();
         data.put("schools",array);
+        data.put("page", CommonUtil.generatePageJSON(schoolPage));
         result.setSuccess(true);
         result.setMsg(MsgConstants.QUERY_SUCCESS);
         return result;

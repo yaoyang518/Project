@@ -41,10 +41,14 @@ public class SchoolController {
     @GetMapping("/listSchool")
     @ApiOperation(value="获取学校列表")
     @ApiImplicitParams(
-            {@ApiImplicitParam(name="token",value="请求token",required = true,paramType = "Header",dataType = "String")}
+            {@ApiImplicitParam(name="token",value="请求token",required = true,paramType = "Header",dataType = "String"),
+            @ApiImplicitParam(name="page",value = "页码",required = true,paramType = "query",dataType = "int",defaultValue = "1"),
+            @ApiImplicitParam(name="size",value = "显示数",required = true,paramType = "query",dataType = "int",defaultValue = "10")}
     )
-    public DataResult listSchool(@RequestHeader String token){
+    public DataResult listSchool(@RequestHeader String token,
+                                 @RequestParam(defaultValue = "1") int page,
+                                 @RequestParam(defaultValue = "10") int size){
         DataResult result = new DataResult();
-        return schoolService.getAllSchool(result);
+        return schoolService.getAllSchool(page,size,result);
     }
 }
