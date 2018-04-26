@@ -8,12 +8,14 @@ import com.school.teachermanage.repository.AddressReposity;
 import com.school.teachermanage.repository.DistrictReposity;
 import com.school.teachermanage.repository.SchoolReposity;
 import com.school.teachermanage.util.StringUtil;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author yaoyang
@@ -55,5 +57,26 @@ public class SchoolService {
         schoolReposity.save(school);
         result.setMsg(MsgConstants.OPT_SUCCESS);
         return result;
+    }
+
+    public DataResult getAllSchool(DataResult result){
+        Iterable<School> schoolList = schoolReposity.findAll();
+        JSONArray array = generateSchoolJsonArray(schoolList);
+        JSONObject data = result.getData();
+        data.put("schools",array);
+        result.setSuccess(true);
+        result.setMsg(MsgConstants.QUERY_SUCCESS);
+        return result;
+    }
+
+    private JSONArray generateSchoolJsonArray(Iterable<School> schoolList){
+        JSONArray array = new JSONArray();
+        for(School school : schoolList){
+            JSONObject json = new JSONObject();
+            json.put("id",school.getId());
+            json.put("name",school.getName());
+            array.add(json);
+        }
+        return array;
     }
 }

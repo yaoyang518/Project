@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 
 /**
- * @author yaoyang
+ * @author yaoyang·
  * @Description:
  * @date 2018/4/25
  */
@@ -31,10 +31,20 @@ public class SchoolController {
 
     @PostMapping("/createSchool")
     @ApiOperation(value="创建学校",notes="结构为{districtId:11,name=镇海中学}")
-    @ApiImplicitParams({@ApiImplicitParam(name="token", value = "",required = true,paramType = "header",dataType = "String"),
+    @ApiImplicitParams({@ApiImplicitParam(name="token", value = "请求token",required = true,paramType = "header",dataType = "String"),
         @ApiImplicitParam(name="school",value = "学校的参数",required = true,paramType = "body",dataType = "JSONObject")})
     public DataResult createSchool(@RequestHeader String token , @RequestBody JSONObject school){
         DataResult result = new DataResult();
         return schoolService.createSchool(school,result);
+    }
+
+    @GetMapping("/listSchool")
+    @ApiOperation(value="获取学校列表")
+    @ApiImplicitParams(
+            {@ApiImplicitParam(name="token",value="请求token",required = true,paramType = "Header",dataType = "String")}
+    )
+    public DataResult listSchool(@RequestHeader String token){
+        DataResult result = new DataResult();
+        return schoolService.getAllSchool(result);
     }
 }
