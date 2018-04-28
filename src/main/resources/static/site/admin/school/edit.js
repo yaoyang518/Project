@@ -71,10 +71,13 @@ $(function() {
     }
     function createCity(item) {
         $("#city-select").empty();
+        $("#district-select").empty();
         for (var i = 0; i < item.length; i++) {
             var obj = item[i];
             $("#city-select").append('<option value="' + obj.id + '">' + obj.name + '</option>');
         }
+        var city = $("#city-select").val();
+        loadDistrict(city);
     }
     function createArea(item) {
         $("#district-select").empty();
@@ -200,12 +203,19 @@ $(function() {
 	$("#addUser-back").click(function(){
 		location.replace("/admin/user/list.html")
 	})*/
-	
+
+    $("#save").click(function() {
+        save();
+    });
+    $("#addUser-back").click(function(){
+        location.replace("/admin/school/list.html")
+    })
+
 	function addUser(params) {
 		showLoading("玩命创建用户中...");
 		$.ajax({
 			type : "POST",
-			url : "/back/user/add",
+			url : "/schoolApi/createSchool",
 			dataType : "JSON",
 			contentType : "application/json; charset=utf-8",
 			data : JSON.stringify(params),
@@ -214,7 +224,12 @@ $(function() {
 			},
 			success : function(result) {
 				var data = result.data;
-				if (data.code == "0000") {
+                hideLoading();
+                $("#userModal-tips").modal('open');
+                $("#user-title").html("创建成功");
+                $("#user-warn").html("");
+                return;
+				/*if (data.code == "0000") {
 					 hideLoading();
 	               	 $("#userModal-tips").modal('open');
 	               	 $("#user-title").html("创建成功");
@@ -228,32 +243,20 @@ $(function() {
 					return;
 				} else {
 					alert(data.msg);
-				}
+				}*/
 				hideLoading();
 			}
 		})
 	}
 	function save() {
-		var mobile = $("#mobile").val();
-		var password = $("#password").val();
-		var parent = $("#parent").val();
-		var username = $("#username").val();
-		
-		if (username == "") {
-			username = mobile;
-		}
+		var district = $("#district-select").val();
+		var address = $("#address").val();
 
 		var params = {
-			"username" : username,
-			"mobile" : mobile,
-			"password" : password
+			"districtId" : district,
+            "name" : address,
 		}
-
-		if (parent != "") {
-			params.parent = {
-				"id" : parent
-			};
-		}
+        console.log(params);
 		addUser(params);
 	}
 

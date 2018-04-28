@@ -39,7 +39,7 @@ $(function () {
         showLoading();
         $.ajax({
             type: "GET",
-            url: '/back/users',
+            url: '/schoolApi/listSchool',
             dataType: "JSON",
             beforeSend: function (request) {
                 request.setRequestHeader("token", token);
@@ -54,8 +54,17 @@ $(function () {
             },
             success: function (result) {
                 var data = result.data;
-                if (data.code == "0000") {
-                    var users = data.users;
+                console.log(data);
+                var users = data.schools;
+                $("#gh-user-list").empty();
+                for (var i = 0; i < users.length; i++) {
+                    createTr(users[i])
+                }
+                if (page == 1) {
+                    createPage(data.page);
+                }
+                /*if (data.code == "0000") {
+                    var users = data.schools;
                     $("#gh-user-list").empty();
                     for (var i = 0; i < users.length; i++) {
                         createTr(users[i])
@@ -70,7 +79,7 @@ $(function () {
                 	
                 }else {
                     alert(data.msg);
-                }
+                }*/
                 hideLoading();
             }
         })
@@ -91,8 +100,8 @@ $(function () {
         var flag = (user.state == '1');
         var tr = '<tr>';
         tr = tr + '<td>' + user.id + '</td>';
-        tr = tr + '<td>' + user.username + '</td>';
-        tr = tr + '<td>' + user.mobile + '</td>';
+        tr = tr + '<td>' + user.name + '</td>';
+        /*tr = tr + '<td>' + user.mobile + '</td>';
         if (user.shopKeeper){
         	tr = tr + '<td>' + user.userLevel + '(店主)</td>';
         }else{
@@ -129,7 +138,7 @@ $(function () {
             tr = tr +
                 '<button class="gh-btn-blue gh-btn-sm gh-margin-left-sm" id="toggleUser' + user.id + '">解锁</button>';
         }
-        tr = tr + '</td>';
+        tr = tr + '</td>';*/
 
         tr = tr + '</tr>';
         $("#gh-user-list").append(tr);
